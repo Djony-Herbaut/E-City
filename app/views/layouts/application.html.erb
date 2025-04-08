@@ -16,6 +16,8 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
+    <!-- Lien vers Google Fonts pour la police Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
@@ -23,6 +25,18 @@
   </head>
 
   <body>
+    <header>
+      <nav>
+        <% if user_signed_in? %>
+          <p>Bienvenue, <%= current_user.nom %> !</p>
+          <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+        <% else %>
+          <%= link_to 'Login', new_user_session_path, class: 'btn btn-primary' %>
+          <%= link_to "S'inscrire", new_user_registration_path, class: 'btn btn-secondary' %>
+        <% end %>
+      </nav>
+    </header>
+
     <%= yield %>
   </body>
 </html>

@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2>Devenir Citoyen</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -19,17 +19,17 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :Votre Mot de Passe %>
     <%= f.password_field :password %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %>
+    <%= f.label : La confirmationde votre Mot de Passe %>
     <%= f.password_field :password_confirmation %>
   </div>
 
   <div class="actions">
-    <%= f.submit "S'inscrire" %>
+    <%= f.submit "Je deviens un citoyen d'E-City" %>
   </div>
 <% end %>
 

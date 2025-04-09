@@ -7,3 +7,6 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Grade.create(nom: 'Simple', seuil_min_points: 0)
+Grade.create(nom: 'Complexe', seuil_min_points: 1000)
+Grade.create(nom: 'Administrateur', seuil_min_points: 70000)

@@ -1,0 +1,30 @@
+.global-container {
+    display: flex;
+    min-height: 85rem;
+    margin: .8rem;
+
+}
+.global-container-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.global-container-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.event-container{
+    display: flex;
+    width: 50rem;
+    margin: 1rem;
+    background-color: #b92626;
+}
+.foot-container{
+    display: flex;
+    height: 20rem;
+    background-color: var(--bgcolor-theme);
+    width: 20rem;
+}
+

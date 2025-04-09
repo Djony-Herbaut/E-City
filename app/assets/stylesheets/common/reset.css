@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+/* Reset */
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font: 1.6rem 'Roboto', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    letter-spacing: .1rem;
+    background-color: var(--bgcolor-theme);
+    color: var(--text-color);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    transition: all .6s ease-in-out;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, p, ul, ol {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-weight: normal;
+}
+
+/* Ajouter les images */
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+button, input {
+    padding: 0;
+    background: none;
+    border: 0;
+}
+/* End Reset */
+
+/* Thème */
+:root {
+    color-scheme: light dark; 
+    --bgcolor-theme: #ffffff;
+    --bgcolor-footer: black;
+    --text-color: #000000;
+    --text-color2: #b37b33;
+}
+
+.footer {
+    color: var(--bgcolor-footer);
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+.foot-img{
+    width:17rem;
+}
+.foot-link{
+    font-size: 2.5rem;
+    display: flex;
+}
+
+.navbar {
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    background-color: var(--bgcolor-theme);
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-navbar {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav-title{
+    margin: 1.5rem;
+    font-size: 1.95rem;
+    font-weight:bold;
+    font-style: italic;
+    color: var(--text-color);
+    display: flex;
+    justify-content:flex-start;
+}
+.nav-img{
+    width: 10rem;
+}
+.list-menu-nav{
+    margin: .5rem;
+    max-width: 20rem;
+}
+.link-menu-nav{
+    color: var(--text-color);
+    font-weight: bold;
+    transition: 0.9s;
+}
+.link-menu-nav:hover{
+    color: var(--text-color2);
+    
+}

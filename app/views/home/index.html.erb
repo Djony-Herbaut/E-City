@@ -1,2 +1,129 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Plateforme connectée E-City">
+
+    <meta property="og:title" content="E-City, La plateforme connectée">
+    <meta property="og:type" content="website">
+    <meta property="og:domain" content="djony-herbaut.github.io">
+    <meta property="og:url" content="https://github.com/Djony-Herbaut/E-City">
+    <meta property="og:description" content="Page dédié au projet Web ING1 GIA2">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= yield :head %>
+    
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="./css/theme-principale.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    
+    <script src="https://kit.fontawesome.com/2454e153f7.js" crossorigin="anonymous"></script>
+    
+    <title><%= content_for(:title) || "E City" %></title>
+
+</head>
+<body itemscope itemtype="https://schema.org/website">
+    <header>
+        <nav class="navbar">
+          <h2 class="nav-title">E-city</h2>
+          <a href="#" itemprop="url">
+            <img src="" class="nav-img" alt="icon-navbar" loading="lazy" itemprop="image">
+          </a>
+      
+          <% if user_signed_in? %>
+            <p>Bienvenue, <%= current_user.nom %> !</p>
+            <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+          <% else %>
+            <ul itemprop="genre" class="menu-navbar">
+              <li class="list-menu-nav"><%= link_to 'Devenir Citoyen', new_user_session_path, class: 'link-menu-nav' %></li>
+              <li class="list-menu-nav"><%= link_to "Connexion à l'espace membre", new_user_registration_path, class: 'link-menu-nav' %></li>
+            </ul>
+          <% end %>
+        </nav>
+      </header>
+      
+    <main>
+        <section class="top-container">
+            <h2 class="title"> Devenir Citoyen de E-City</h2>
+            <div class="top-btn-container">
+                <a class="button default-round-button" href="" itemprop="url">Postez vos évènements !</a>
+                <a class="button default-round-button" href="" itemprop="url">Tous les évènements</a>
+            </div>
+        </section>
+
+        <section class="global-container global-container-column">
+            <h2 class="title gold-title"> Nos actualités </h2>
+            <p class="default-text presentation-text">
+                Bienvenue sur notre plateforme dédiée aux passionnés de sports, où chaque coup de sifflet, chaque sprint et chaque point marqué compte ! 🏆<br><br>
+                Que vous soyez un fervent supporter, un athlète en herbe ou un organisateur d'événements sportifs, 
+                notre plateforme est votre nouvel espace de prédilection pour découvrir 
+                et partager des moments inoubliables liés au sport.<br><br>
+                Imaginez-vous, connectés avec des milliers d'autres passionnés, tous unis par une même passion : le sport. 
+                Sur notre plateforme conviviale, vous trouverez une multitude d'événements, des matchs de football palpitants aux tournois de tennis endiablés, 
+                en passant par les rencontres amicales entre sportifs de tous niveaux.<br><br>
+                Mais ce n'est pas tout ! Notre plateforme va au-delà du simple calendrier d'événements. C'est un lieu de partage, 
+                d'inspiration et de rassemblement. <br><br>
+                Créez votre propre compte pour partager vos exploits sportifs, organiser des événements inoubliables et rencontrer de nouveaux compagnons d'entraînement.
+                Rejoignez-nous dès maintenant et plongez dans une communauté vibrante, où chaque participant, chaque émotion et chaque victoire compte. 
+                Parce que sur notre plateforme, le sport n'est pas seulement une activité, c'est un mode de vie. 🌟<br><br>
+            </p>
+            <a class="button gold-round-button" href="#" itemprop="url">Découvrir tous les évènements &#x2794; </a>
+        </section>
+
+        <section class="global-container global-container-column">
+            <h2 class="title gold-title">
+                Le Réseaux de Transport de E-City 
+                <img src="" class="meet-point-JO" alt="" loading="lazy" itemprop="image">
+            </h2>
+            <a class="button gold-round-button" href="#" itemprop="url">Voir les horaires par arrêt &#x2794; </a> 
+
+        </section>
+
+        <section class="global-container global-container-column">
+            <h2 class="title gold-title">
+                Notre Histoire
+            </h2>
+            <div>
+
+            </div>
+            <div>
+
+            </div>
+            <a class="button gold-round-button" href="#" itemprop="url">Voir les horaires par arrêt &#x2794; </a> 
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <section class="foot-container">
+            <ul class="social-media-list">
+                <li>
+                    <i class="fa-brands fa-facebook"></i>
+                    <a class="foot-link" href="https://www.facebook.com/actujeuxolympiques/" itemprop="url">Facebook</a>
+                </li>
+                <li>
+                    <i class="fa-brands fa-instagram"></i>
+                    <a class="foot-link" href="https://www.instagram.com/paris2024/" itemprop="url">Instagram</a>
+                </li>
+                <li>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <a class="foot-link" href="https://fr.linkedin.com/company/paris-2024-olympic-and-paralympic-games-bid" itemprop="url">LinkedIn</a>
+                </li>
+            </ul>
+        </section>
+
+        <img src="" class="foot-img" alt="icon-footer" loading="lazy" itemprop="image">
+    </footer>
+    <%= yield %>
+</body>

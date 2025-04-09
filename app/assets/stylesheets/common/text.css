@@ -1,0 +1,19 @@
+.title {
+    font-family: 'Roboto', sans-serif;
+    font-size:3.5rem;
+    color: var(--bgcolor-theme);
+    font-weight: 700;
+    text-align: center;
+    margin: 1rem;
+}
+
+.black-title{
+    color: var(--text-color) ;
+}
+.gold-title{
+    color: var(--text-color2);
+}
+.default-text{
+    font-size: 2rem;
+    font-family: 'Roboto',sans-serif;
+}

@@ -17,6 +17,8 @@ Rails.application.configure do
 
   # Config de l'URL par défau pour les emails
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
 
   # Enable/disable Action Controller caching. By default Action Controller caching is disabled.
   # Run rails dev:cache to toggle Action Controller caching.
@@ -35,7 +37,9 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  #config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+
 
   # Make template changes take effect immediately.
   config.action_mailer.perform_caching = false

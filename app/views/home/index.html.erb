@@ -46,8 +46,8 @@
             <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
           <% else %>
             <ul itemprop="genre" class="menu-navbar">
-              <li class="list-menu-nav"><%= link_to 'Devenir Citoyen', new_user_session_path, class: 'link-menu-nav' %></li>
-              <li class="list-menu-nav"><%= link_to "Connexion à l'espace membre", new_user_registration_path, class: 'link-menu-nav' %></li>
+              <li class="list-menu-nav"><%= link_to 'Devenir Citoyen', new_user_registration_path, class: 'link-menu-nav' %></li>
+              <li class="list-menu-nav"><%= link_to "Connexion à l'espace membre", new_user_session_path, class: 'link-menu-nav' %></li>
             </ul>
           <% end %>
         </nav>

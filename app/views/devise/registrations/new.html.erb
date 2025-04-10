@@ -4,27 +4,28 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :nom %>
+    <%= f.label :"nom" %>
     <%= f.text_field :nom, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :prenom %>
+    <%= f.label :"prenom" %>
     <%= f.text_field :prenom %>
   </div>
 
   <div class="field">
-    <%= f.label :email %>
+    <%= f.label :"email" %>
     <%= f.email_field :email %>
   </div>
 
   <div class="field">
-    <%= f.label :Votre Mot de Passe %>
+    <!--ATTENTION après les : encadrer le texte de "" s'il contient des espaces sinon crash !!-->
+    <%= f.label :"Votre Mot de Passe" %>
     <%= f.password_field :password %>
   </div>
 
   <div class="field">
-    <%= f.label : La confirmationde votre Mot de Passe %>
+    <%= f.label :"La confirmationde votre Mot de Passe" %>
     <%= f.password_field :password_confirmation %>
   </div>
 

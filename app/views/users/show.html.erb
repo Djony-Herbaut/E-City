@@ -1,1 +1,100 @@
-<h1>Profil de <%= @user.nom %></h1>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Plateforme connectée E-City">
+
+    <%= yield :head %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="./css/theme-principale.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    
+    <script src="https://kit.fontawesome.com/2454e153f7.js" crossorigin="anonymous"></script>
+    
+    <title><%= content_for(:title) || "E City" %></title>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+          <h2 class="nav-title">E-city</h2>
+          <h4><%= link_to 'Toutes les Actualités', actualites_path, class: 'link-menu-nav' %></h4>
+          <h4>Notre Histoire</h4>
+          <h4>Les Transports</h4>
+      
+          <% if user_signed_in? %>
+            <%= form_for :destroy_user_session, url: destroy_user_session_path, method: :delete, html: { data: { confirm: "Tu es sûr de vouloir te déconnecter ?" } } do |f| %>
+            <%= f.submit "Se déconnecter", class: "btn btn-warning" %>
+          <% end %>
+          <% else %>
+            <ul itemprop="genre" class="menu-navbar">
+              <li class="list-menu-nav"><%= link_to 'Devenir Citoyen', new_user_session_path, class: 'link-menu-nav' %></li>
+              <li class="list-menu-nav"><%= link_to "Connexion à l'espace membre", new_user_session_path, class: 'link-menu-nav' %></li>
+            </ul>
+          <% end %>
+        </nav>
+    </header>
+
+<main>
+  <section class="actualites-section">
+    <h1 class="gold-title">Profil de <%= @user.prenom %></h1>
+
+    <% if @actualites_utilisateur.any? %>
+      <div class="carousel">
+        <% @actualites_utilisateur.each_with_index do |actualite, index| %>
+          <input type="radio" name="carousel" id="slide-<%= index %>" <%= 'checked' if index == 0 %>>
+        <% end %>
+
+        <div class="slides">
+          <% @actualites_utilisateur.each_with_index do |actualite, index| %>
+            <div class="slide">
+              <div class="image">
+                <% if actualite.image.attached? %>
+                  <%= image_tag actualite.image, alt: actualite.titre %>
+                <% else %>
+                  <img src="https://via.placeholder.com/850x350?text=Pas+d'image" alt="Pas d'image">
+                <% end %>
+              </div>
+              <div class="infos">
+                <h3><%= actualite.titre %></h3>
+                <p><%= truncate(actualite.contenu, length: 150) %></p>
+                <%= link_to "Lire plus", actualite_path(actualite), class: "lire-plus" %>
+              </div>
+            </div>
+          <% end %>
+
+          <div class="presentation-text">
+            <%= link_to "Créer une Nouvelle Actualité", new_actualite_path, class: "button gold-round-button" %>
+          </div>
+        </div>
+
+        <div class="nav">
+          <% @actualites_utilisateur.each_with_index do |_, index| %>
+            <label for="slide-<%= index %>"></label>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <div class="global-container global-container-column">
+        <p class="title">Tu n'as encore publié aucune actualité.</p>
+        <%= link_to "Créer ma première actualité", new_actualite_path, class: "button gold-round-button" %>
+      </div>
+    <% end %>
+  </section>
+</main>
+    
+</body>

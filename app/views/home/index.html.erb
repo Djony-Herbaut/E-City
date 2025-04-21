@@ -37,8 +37,8 @@
         <nav class="navbar">
           <h2 class="nav-title">E-city</h2>
           <h4><%= link_to 'Toutes les Actualités', actualites_path, class: 'link-menu-nav' %></h4>
-          <h4>Notre Histoire</h4>
-          <h4>Les Transports</h4>
+          <h4><%= link_to 'Notre Histoire', '#histoire', class: 'link-menu-nav' %></h4>
+          <h4><%= link_to 'Les Transports', '#transports', class: 'link-menu-nav' %></h4>
       
           <% if user_signed_in? %>
             <%= form_for :destroy_user_session, url: destroy_user_session_path, method: :delete, html: { data: { confirm: "Tu es sûr de vouloir te déconnecter ?" } } do |f| %>
@@ -65,7 +65,7 @@
           </div>
         <% else %>
           <div class="top-btn-container">
-            <%= link_to 'Devenir Citoyen', new_user_session_path, class: 'button default-round-button' %>
+            <%= link_to 'Devenir Citoyen', new_user_registration_path, class: 'button default-round-button' %>
           </div>
         <% end %>
       </section>
@@ -108,7 +108,7 @@
         </section>
 
         <section class="global-container global-container-column">
-            <h2 class="title gold-title">
+            <h2 class="title gold-title" id="transports">
                 Le Réseaux de Transport de E-City 
                 <img src="" class="meet-point-JO" alt="" loading="lazy" itemprop="image">
             </h2>
@@ -117,7 +117,7 @@
         </section>
 
         <section class="global-container global-container-column">
-            <h2 class="title gold-title">
+            <h2 class="title gold-title" id="histoire">
                 Notre Histoire
             </h2>
             <div>

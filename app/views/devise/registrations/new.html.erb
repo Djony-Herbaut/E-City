@@ -1,37 +1,42 @@
-<h2>Devenir Citoyen</h2>
+<div class="form-container">
+  <div class="form-box">
+    <h2 class="form-title">Devenir Citoyen</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :"nom" %>
-    <%= f.text_field :nom, autofocus: true %>
+      <div class="field">
+        <%= f.label :nom, "Nom" %>
+        <%= f.text_field :nom, autofocus: true, class: "input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :prenom, "Prénom" %>
+        <%= f.text_field :prenom, class: "input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email, "Email" %>
+        <%= f.email_field :email, class: "input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :"Votre Mot de Passe" %>
+        <%= f.password_field :password, class: "input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :"La confirmationde votre Mot de Passe", "Confirmation du mot de passe" %>
+        <%= f.password_field :password_confirmation, class: "input" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Je deviens un citoyen d'E-City", class: "button-submit" %>
+      </div>
+    <% end %>
+
+    <div class="devise-links">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :"prenom" %>
-    <%= f.text_field :prenom %>
-  </div>
-
-  <div class="field">
-    <%= f.label :"email" %>
-    <%= f.email_field :email %>
-  </div>
-
-  <div class="field">
-    <!--ATTENTION après les : encadrer le texte de "" s'il contient des espaces sinon crash !!-->
-    <%= f.label :"Votre Mot de Passe" %>
-    <%= f.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= f.label :"La confirmationde votre Mot de Passe" %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Je deviens un citoyen d'E-City" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

@@ -1,6 +1,5 @@
 class ActualitesController < ApplicationController
   before_action :set_actualite, only: %i[ show edit update destroy ]
-
   
   def index
     @actualites = Actualite.all
@@ -19,8 +18,8 @@ class ActualitesController < ApplicationController
   end
 
   def create
-    @actualite = Actualite.new(actualite_params)
-
+    @actualite = current_user.actualites.build(actualite_params)
+  
     respond_to do |format|
       if @actualite.save
         format.html { redirect_to @actualite, notice: "Actualité créée avec succès." }
@@ -59,6 +58,6 @@ class ActualitesController < ApplicationController
     end
 
     def actualite_params
-      params.require(:actualite).permit(:titre, :contenu, :image, :user_id)
-    end
+      params.require(:actualite).permit(:titre, :contenu, :image)
+    end    
 end

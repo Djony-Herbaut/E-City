@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Plateforme connectée E-City">
+
+    <%= yield :head %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="./css/theme-principale.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    
+    <script src="https://kit.fontawesome.com/2454e153f7.js" crossorigin="anonymous"></script>
+
+</head>
+<body itemscope itemtype="https://schema.org/website">
+    <header>
+        <nav class="navbar">
+          <h2 class="nav-title">E-city</h2>
+          <h4><%= link_to 'Toutes les Actualités', actualites_path, class: 'link-menu-nav' %></h4>
+          <h4><%= link_to "Lire l'Histoire complète →", notre_histoire_path, class: 'link-menu-nav' %></h4>
+          <h4><%= link_to 'Les Transports', '#transports', class: 'link-menu-nav' %></h4>
+      
+          <% if user_signed_in? %>
+            <%= form_for :destroy_user_session, url: destroy_user_session_path, method: :delete, html: { data: { confirm: "Tu es sûr de vouloir te déconnecter ?" } } do |f| %>
+            <%= f.submit "Se déconnecter", class: "btn btn-warning" %>
+          <% end %>
+          <% else %>
+            <ul itemprop="genre" class="menu-navbar">
+
+              <li class="list-menu-nav"><%= link_to 'Devenir Citoyen', new_user_registration_path, class: 'link-menu-nav' %></li>
+
+              <li class="list-menu-nav"><%= link_to "Connexion à l'espace membre", new_user_session_path, class: 'link-menu-nav' %></li>
+            </ul>
+          <% end %>
+        </nav>
+      </header>
+<% content_for :title, "Notre Histoire" %>
+
+    <main class="history-container">
+        <section class="section center light">
+            <h2 class="section-title">L’Histoire d’E-City</h2>
+            <p class="section-text">De 2010 à 2035, E-City est passée d’une ville classique à une référence mondiale en matière de ville durable et connectée.
+            </p>
+        </section>
+
+        <section class="section split dark">
+            <div class="section-image left" style="background-image: url('<%= asset_path('2010-ville-industrielle.jpg') %>');"></div>
+            <div class="section-text right">
+            <h3>2010 - Le Déclin et le Réveil</h3>
+            <p><br>
+                En 2010, E-City n'était encore qu'une ville moyenne du sud-est, marquée par un passé industriel en déclin. Ses rues, bien que pleines de charme, étaient encombrées de voitures, et la pollution étouffait les quartiers résidentiels. 
+                Les habitants, attachés à leur ville, espéraient un futur meilleur, mais rien ne semblait bouger.
+
+                C’est cette même année qu’un groupe de jeunes ingénieurs, urbanistes et sociologues locaux lança une initiative citoyenne : 
+                Projet Renaissance. Leur objectif ? 
+                Redonner vie à la ville en la rendant plus verte, plus humaine, plus connectée. 
+                L’idée d’une « smart city » naquit dans des cafés, lors de réunions publiques, et peu à peu, l’idée fit son chemin dans l’esprit de la municipalité.
+            </p>
+            </div>
+        </section>
+
+        <section class="section split light">
+            <div class="section-text left">
+            <h3>2015 - La transition écologique</h3>
+            <p>Des trams autonomes, des toitures végétalisées, une politique ambitieuse de verdissement urbain... E-City commence à respirer.
+                Une ville industrielle en souffrance... puis un réveil citoyen. Le Projet Renaissance pose les premières pierres d’une transformation.
+                À partir de 2015, E-City entama un virage radical. La municipalité lança un grand plan d’investissement public-privé, visant à restructurer 
+                les infrastructures de transport et les services publics. Les deux piliers de cette transformation furent :
+
+                La mobilité propre : des lignes de tram autonomes furent mises en chantier, accompagnées de pistes cyclables connectées et 
+                de parkings végétalisés. L’usage de la voiture fut restreint dans le centre historique, remplacé par des navettes électriques gratuites.
+
+                La végétalisation urbaine : plus de 3 000 arbres furent plantés. Des toitures végétalisées se multiplièrent, des micro-forêts urbaines furent créées, 
+                et les berges du fleuve furent aménagées en promenades écologiques.
+
+                En parallèle, la ville installa ses premiers capteurs intelligents (qualité de l’air, gestion de l’eau, circulation) et ouvrit ses données à tous. 
+                Les habitants pouvaient suivre en temps réel la qualité de vie de leur quartier via une plateforme numérique.
+            </p>
+            </div>
+            <div class="section-image right" style="background-image: url('<%= asset_path('2015-tram-nature.jpg') %>');"></div>
+        </section>
+
+        <section class="section split dark">
+            <div class="section-image left" style="background-image: url('<%= asset_path('2023-ville-connectee.jpg') %>');"></div>
+            <div class="section-text right">
+            <h3>2023 - La consécration connectée</h3>
+            <p>Premier label “Ville Connectée Responsable”. Transports gratuits, IA prédictive, potagers collaboratifs, et démocratie numérique participative.
+                La crise sanitaire mondiale de 2020 fut un choc pour beaucoup, mais E-City réussit à en faire un levier de transformation numérique.
+                Grâce à son infrastructure déjà partiellement connectée, la ville réagit vite : gestion prédictive des flux, optimisation des transports, 
+                téléservices renforcés. L’école connectée fut lancée, et les citoyens purent participer à des budgets participatifs 100% numériques.
+                <br>
+
+                En 2023, E-City devint la première ville moyenne labellisée “Ville Connectée Responsable”. 
+                Ce label récompensait ses efforts pour concilier innovation, inclusion sociale, et développement durable. 
+                Les transports publics devenaient totalement gratuits pour les habitants, les écoles étaient toutes équipées d’outils pédagogiques 
+                en réalité augmentée, et l’intelligence artificielle était utilisée pour prédire les besoins en énergie 
+                et ajuster la distribution automatiquement.
+                <br>
+
+                La nature, quant à elle, était au cœur du projet. Les “îlots frais” permettaient aux citoyens de se reposer à l’ombre de forêts urbaines, 
+                les potagers communautaires se multipliaient, et l’ensemble de la gestion des espaces verts passait par une plateforme participative.
+            </p>
+            </div>
+        </section>
+
+        <section class="section split light">
+            <div class="section-text left">
+            <h3>2035 - Un futur vivant</h3>
+            <p>Une ville verte, équitable, connectée. Campus de recherche, neutralité carbone, toitures comestibles et ville-nature pleinement intégrée.
+                🌟 2035 : Une ville pionnière au rayonnement international
+                    E-City ne s’arrête pas là. D’ici 2035, la ville vise plusieurs objectifs ambitieux :
+
+                    Une neutralité carbone complète, grâce à l’extension de son réseau de panneaux solaires urbains et à la récupération de l’énergie cinétique des transports.
+
+                    Une démocratie augmentée, où les décisions locales seront prises en partie grâce à l’analyse collective des données partagées par les citoyens.
+
+                    Un campus de recherche intercontinental, dédié aux villes durables, qui attirera chercheurs, étudiants et entrepreneurs du monde entier.
+
+                    Un équilibre ville-nature, avec 65% du territoire végétalisé, des toitures comestibles, et des zones agricoles intégrées aux quartiers résidentiels.
+
+                    E-City veut démontrer qu’une ville connectée ne signifie pas déshumanisée, mais bien plus vivante, plus verte, plus participative.
+            </p>
+            </div>
+            <div class="section-image right" style="background-image: url('<%= asset_path('2035-vision.jpg') %>');"</div>
+        </section>
+    </main>
+</body>

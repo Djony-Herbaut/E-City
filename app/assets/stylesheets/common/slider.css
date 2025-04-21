@@ -10,7 +10,6 @@
   color: var(--white);
   padding: 3rem;
   text-align: center;
-  height: 70rem;
 }
 
 .title {
@@ -21,7 +20,7 @@
 
 .carousel {
   position: relative;
-  max-width: 50rem;
+  max-width: 60rem;
   margin: 0 auto;
 }
 
@@ -38,14 +37,29 @@
 
 .slide {
   display: none;
-  padding: 1rem;
+  padding: 2rem;
   background: var(--black);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .slide img {
-  width: 70%;
+  width: 100%;
+  max-width: 500px;
+  max-height: 300px;
+  height: auto;
   border-radius: 8px;
   margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.infos {
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .infos h3 {
@@ -55,6 +69,8 @@
 
 .infos p {
   margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 .lire-plus {

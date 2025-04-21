@@ -1,0 +1,55 @@
+.history-container {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+  }
+  
+  .section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 6rem 3rem;
+  }
+  
+  .section.center {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .section.split {
+    justify-content: space-between;
+  }
+  
+  .section-text {
+    flex: 1 1 45%;
+    padding: 2rem;
+  }
+  
+  .section-image {
+    flex: 1 1 45%;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2rem;
+  }
+  
+  .section.light {
+    background-color: #ffffff;
+    color: #111;
+  }
+  
+  .section.dark {
+    background-color: #111111;
+    color: #fff;
+  }
+  
+  .section-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .section h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "pages/e_city_histoire"
+  get 'notre-histoire', to: 'pages#e_city_histoire'
   get "users/show"
   get 'mon_profil', to: 'users#show', as: :user_profile
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

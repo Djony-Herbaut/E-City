@@ -39,6 +39,7 @@
           <h4><%= link_to 'Toutes les Actualités', actualites_path, class: 'link-menu-nav' %></h4>
           <h4><%= link_to 'Notre Histoire', '#histoire', class: 'link-menu-nav' %></h4>
           <h4><%= link_to 'Les Transports', '#transports', class: 'link-menu-nav' %></h4>
+          <h4></h4>
       
           <% if user_signed_in? %>
             <%= form_for :destroy_user_session, url: destroy_user_session_path, method: :delete, html: { data: { confirm: "Tu es sûr de vouloir te déconnecter ?" } } do |f| %>
@@ -116,17 +117,21 @@
 
         </section>
 
-        <section class="global-container global-container-column">
-            <h2 class="title gold-title" id="histoire">
+        <section class="actualites-section">
+            <h2 class="gold-title" id="histoire">
                 Notre Histoire
             </h2>
             <div>
+              <p class="default-text">Depuis ses racines industrielles jusqu’à sa métamorphose en ville connectée modèle, 
+                <br> E-City incarne une révolution douce : celle d’un urbanisme centré sur l’humain, la nature, et la technologie. 🌿
 
+                Grâce à des transports propres, une végétation omniprésente <br>
+                et des innovations numériques citoyennes, E-City est devenue un exemple d’équilibre entre progrès et respect de l’environnement.
+                <br>
+                🌍 Découvrez comment une ville peut changer le monde, quartier par quartier, idée par idée...</p>
             </div>
-            <div>
-
-            </div>
-            <a class="button gold-round-button" href="#" itemprop="url">Lire l'Histoire complète &#x2794; </a> 
+            <%= image_tag 'histoire_e_city.jpg', alt: 'Histoire E-City', style: 'max-width: 30%; align-self : center' %>
+            <%= link_to "Lire l'histoire complète", notre_histoire_path, class: 'button gold-round-button' %>
         </section>
 
     </main>

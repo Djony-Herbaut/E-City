@@ -1,25 +1,23 @@
 class ActualitesController < ApplicationController
   before_action :set_actualite, only: %i[ show edit update destroy ]
 
-  # GET /actualites or /actualites.json
+  
   def index
     @actualites = Actualite.all
   end
 
-  # GET /actualites/1 or /actualites/1.json
+  
   def show
   end
 
-  # GET /actualites/new
   def new
     @actualite = Actualite.new
   end
 
-  # GET /actualites/1/edit
+  
   def edit
   end
 
-  # POST /actualites or /actualites.json
   def create
     @actualite = Actualite.new(actualite_params)
 
@@ -34,7 +32,6 @@ class ActualitesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /actualites/1 or /actualites/1.json
   def update
     respond_to do |format|
       if @actualite.update(actualite_params)
@@ -47,7 +44,6 @@ class ActualitesController < ApplicationController
     end
   end
 
-  # DELETE /actualites/1 or /actualites/1.json
   def destroy
     @actualite.destroy!
 
@@ -58,13 +54,11 @@ class ActualitesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_actualite
-      @actualite = Actualite.find(params.expect(:id))
+      @actualite = Actualite.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def actualite_params
-      params.expect(actualite: [ :titre, :contenu, :image, :user_id ])
+      params.require(:actualite).permit(:titre, :contenu, :image, :user_id)
     end
 end

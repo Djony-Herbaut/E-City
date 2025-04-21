@@ -1,0 +1,163 @@
+$fa-font-path: ".";
+//@import "rails_admin/src/rails_admin/styles/base";
+// === Couleurs de la charte modernisée ===
+$e-city-black: #000000;
+$e-city-white: #ffffff;
+$e-city-gold: #FFD700;
+$e-city-light-grey: #f5f5f5;
+
+body.rails_admin {
+  background-color: $e-city-white;
+  color: $e-city-black;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  padding: 2rem;
+}
+
+// === Centrage général ===
+.container, .wrapper, .main, .content {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+// === Navbar ===
+.navbar.navbar-inverse {
+  background-color: $e-city-black;
+  border: none;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .brand {
+  color: $e-city-gold !important;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .nav > li > a {
+  color: $e-city-white !important;
+  padding: 0.75rem 1rem;
+  transition: background 0.3s;
+}
+
+.navbar .nav > li > a:hover {
+  background-color: $e-city-gold;
+  color: $e-city-black !important;
+  border-radius: 4px;
+}
+
+// === Sidebar ===
+.sidebar-nav {
+  background-color: $e-city-light-grey;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.sidebar-nav li a {
+  color: $e-city-black !important;
+  font-weight: 500;
+}
+
+.sidebar-nav li a:hover {
+  color: $e-city-gold !important;
+}
+
+// === Sections (tableaux, formulaires...) ===
+.main_content, .form-horizontal, .form-actions, .panel, .dashboard_section {
+  background-color: $e-city-light-grey;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+// === Titres ===
+h1, h2, h3, h4, h5 {
+  color: $e-city-black;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+// === Tableaux ===
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: $e-city-white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #fafafa;
+}
+
+.table-striped tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+// === Formulaires ===
+input, select, textarea {
+  background-color: $e-city-white;
+  color: $e-city-black;
+  border: 1px solid #ccc;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  width: 100%;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: $e-city-gold;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.3);
+}
+
+// === Boutons ===
+.btn {
+  background-color: $e-city-gold;
+  color: $e-city-black;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: darken($e-city-gold, 10%);
+  color: $e-city-white;
+}
+
+// === Liens style bouton ===
+a.button-link {
+  display: inline-block;
+  background-color: $e-city-gold;
+  color: $e-city-black !important;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+a.button-link:hover {
+  background-color: darken($e-city-gold, 10%);
+  color: $e-city-white !important;
+}
+
+// === Flash messages ===
+.alert {
+  background-color: $e-city-gold;
+  color: $e-city-black;
+  border-radius: 4px;
+  padding: 1rem;
+}

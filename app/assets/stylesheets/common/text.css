@@ -9,6 +9,7 @@
 
 .black-title{
     color: var(--text-color) ;
+    font-weight: bold;
 }
 .gold-title{
     color: var(--text-color2);

@@ -2,6 +2,7 @@
 @import url("./common/reset.css");
 @import url("./common/button.css");
 @import url("./common/text.css");
+@import url("./common/slider.css");
 
 .top-container {
     height: 85rem;
@@ -9,7 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("../../asset/Olympic-seine.png");
+    background-image: url('E-City_bg.png');
     background-size:cover;
     background-position: center;
 }

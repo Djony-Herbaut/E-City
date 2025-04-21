@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "users/show"
+  get 'mon_profil', to: 'users#show', as: :user_profile
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :actualites
   get "home/index"
   devise_for :users

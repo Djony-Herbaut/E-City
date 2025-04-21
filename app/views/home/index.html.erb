@@ -11,10 +11,9 @@
     <meta property="og:domain" content="djony-herbaut.github.io">
     <meta property="og:url" content="https://github.com/Djony-Herbaut/E-City">
     <meta property="og:description" content="Page dédié au projet Web ING1 GIA2">
+    <%= yield :head %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= yield :head %>
-    
 
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -37,65 +36,73 @@
     <header>
         <nav class="navbar">
           <h2 class="nav-title">E-city</h2>
-          <a href="#" itemprop="url">
-            <img src="" class="nav-img" alt="icon-navbar" loading="lazy" itemprop="image">
-          </a>
+          <h4><%= link_to 'Toutes les Actualités', actualites_path, class: 'link-menu-nav' %></h4>
+          <h4>Notre Histoire</h4>
+          <h4>Les Transports</h4>
       
           <% if user_signed_in? %>
-            <p>Bienvenue, <%= current_user.nom %> !</p>
-            <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+            <%= form_for :destroy_user_session, url: destroy_user_session_path, method: :delete, html: { data: { confirm: "Tu es sûr de vouloir te déconnecter ?" } } do |f| %>
+            <%= f.submit "Se déconnecter", class: "btn btn-warning" %>
+          <% end %>
           <% else %>
             <ul itemprop="genre" class="menu-navbar">
               <li class="list-menu-nav"><%= link_to 'Devenir Citoyen', new_user_session_path, class: 'link-menu-nav' %></li>
-              <li class="list-menu-nav"><%= link_to "Connexion à l'espace membre", new_user_registration_path, class: 'link-menu-nav' %></li>
+              <li class="list-menu-nav"><%= link_to "Connexion à l'espace membre", new_user_session_path, class: 'link-menu-nav' %></li>
             </ul>
           <% end %>
         </nav>
       </header>
       
     <main>
-        <section class="top-container">
-            <h2 class="title"> Devenir Citoyen de E-City</h2>
-            <div class="top-btn-container">
-                <a class="button default-round-button" href="" itemprop="url">Devenir Citoyen de E-City !</a>
-            </div>
-        </section>
+      <section class="top-container">
+        <% if user_signed_in? %>
+          <div class="top-btn-container">
+            <%= link_to user_profile_path, class: 'button default-round-button' do %>
+            Bienvenue, <%= current_user.prenom %> ! Accédez à votre Espace
+          <% end %>
+          </div>
+        <% else %>
+          <div class="top-btn-container">
+            <%= link_to 'Devenir Citoyen', new_user_session_path, class: 'button default-round-button' %>
+          </div>
+        <% end %>
+      </section>
 
-        <section class="global-container global-container-column actualites-section">
-            <h2 class="title gold-title"> Nos actualités </h2>
-          
-            <div class="slider-wrapper">
-              <div class="card">
-                <% @actualites.each_with_index do |actualite, index| %>
-                  <%= tag.input type: "radio", name: "select", id: "slide_#{index + 1}", checked: index == 0 %>
-                <% end %>
-                <%= tag.input type: "checkbox", id: "slideImg" %>
-          
-                <div class="slider">
-                    <% @actualites.each_with_index do |actualite, index| %>
-                      <%= tag.label "slide_#{index + 1}", class: "slide slide_#{index + 1}" %>
+        <section class="actualites-section">
+          <h2 class="title">Nos actualités</h2>
+        
+          <div class="carousel">
+            <% @actualites.last(5).each_with_index do |actualite, index| %>
+              <input type="radio" name="carousel" id="slide-<%= index %>" <%= 'checked' if index == 0 %>>
+            <% end %>
+        
+            <div class="slides">
+              <% @actualites.last(5).each_with_index do |actualite, index| %>
+                <div class="slide">
+                  <div class="image">
+                    <% if actualite.image.attached? %>
+                      <%= image_tag actualite.image, alt: actualite.titre %>
+                    <% else %>
+                      <img src="https://via.placeholder.com/850x350?text=Pas+d'image" alt="Pas d'image">
                     <% end %>
-                </div>
-          
-                <% @actualites.each_with_index do |actualite, index| %>
-                  <div class="inner_part">
-                    <label for="slideImg" class="img">
-                      <% if actualite.image.attached? %>
-                        <%= image_tag actualite.image, class: "img_#{index + 1}" %>
-                      <% else %>
-                        <img class="img_<%= index + 1 %>" src="https://via.placeholder.com/850x350?text=Pas+d'image">
-                      <% end %>
-                    </label>
-                    <div class="content content_<%= index + 1 %>">
-                      <div class="title"><%= actualite.titre %></div>
-                      <div class="text"><%= truncate(actualite.contenu, length: 250) %></div>
-                      <%= link_to 'Lire plus', actualite_path(actualite), class: "btn" %>
-                    </div>
                   </div>
-                <% end %>
-              </div>
+                  <div class="infos">
+                    <h3><%= actualite.titre %></h3>
+                    <p><%= truncate(actualite.contenu, length: 150) %></p>
+                    <%= link_to "Lire plus", actualite_path(actualite), class: "lire-plus" %>
+                  </div>
+                </div>
+              <% end %>
             </div>
-            <a class="button gold-round-button" href="#" itemprop="url"> Toutes nos Actus &#x2794; </a>
+        
+            <div class="nav">
+              <% @actualites.last(5).each_with_index do |_, index| %>
+                <label for="slide-<%= index %>"></label>
+              <% end %>
+            </div>
+          </div>
+        
+          <%= link_to "Toutes nos actus →", actualites_path, class: "btn-all" %>
         </section>
 
         <section class="global-container global-container-column">
@@ -117,7 +124,7 @@
             <div>
 
             </div>
-            <a class="button gold-round-button" href="#" itemprop="url">Voir les horaires par arrêt &#x2794; </a> 
+            <a class="button gold-round-button" href="#" itemprop="url">Lire l'Histoire complète &#x2794; </a> 
         </section>
 
     </main>

@@ -1,10 +1,97 @@
-<p style="color: green"><%= notice %></p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Détails de l'actualité - Plateforme E-City">
 
-<%= render @actualite %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "actualites", "data-turbo-track": "reload" %>
 
-<div>
-  <%= link_to "Edit this actualite", edit_actualite_path(@actualite) %> |
-  <%= link_to "Back to actualites", actualites_path %>
+    <title>E-City | <%= @actualite.titre %></title>
+</head>
+<body class="actualites-body">
+  <header>
+    <nav class="navbar">
+      <h2 class="nav-title">E-city</h2>
+      <h4><%= link_to 'Toutes les Actualités', actualites_path, class: 'link-menu-nav' %></h4>
+      <h4><%= link_to 'Accueil', '/', class: 'link-menu-nav' %></h4>
+      <h4><%= link_to "Lire l'Histoire complète →", notre_histoire_path, class: 'link-menu-nav' %></h4>
+      <h4><%= link_to 'Les Transports', '#transports', class: 'link-menu-nav' %></h4>
 
-  <%= button_to "Destroy this actualite", @actualite, method: :delete %>
-</div>
+      <% if user_signed_in? %>
+        <%= form_for :destroy_user_session, url: destroy_user_session_path, method: :delete, html: { data: { confirm: "Tu es sûr de vouloir te déconnecter ?" } } do |f| %>
+        <%= f.submit "Se déconnecter", class: "btn btn-warning" %>
+      <% end %>
+      <% else %>
+        <ul itemprop="genre" class="menu-navbar">
+
+          <li class="list-menu-nav"><%= link_to 'Devenir Citoyen', new_user_registration_path, class: 'link-menu-nav' %></li>
+
+          <li class="list-menu-nav"><%= link_to "Connexion à l'espace membre", new_user_session_path, class: 'link-menu-nav' %></li>
+        </ul>
+      <% end %>
+    </nav>
+  </header>
+
+    <main class="actualite-show-container">
+        <% if notice %>
+            <div class="notice"><%= notice %></div>
+        <% end %>
+
+        <article class="actualite-detail">
+            <% if @actualite.image.attached? %>
+                <%= image_tag @actualite.image, class: "actualite-detail-image", alt: @actualite.titre %>
+            <% else %>
+                <div class="actualite-image-placeholder">
+                    <span>Image non disponible</span>
+                </div>
+            <% end %>
+
+            <div class="actualite-detail-content">
+                <h1 class="actualite-detail-title"><%= @actualite.titre %></h1>
+                
+                <div class="actualite-meta">
+                    <span class="actualite-date">
+                        <i class="fas fa-calendar-alt"></i> <%= l(@actualite.created_at, format: :long) %>
+                    </span>
+                    <% if @actualite.user %>
+                        <span class="actualite-author">
+                            <i class="fas fa-user"></i> <%= @actualite.user.prenom %>
+                        </span>
+                    <% end %>
+                </div>
+
+                <div class="actualite-detail-text">
+                    <%= simple_format(@actualite.contenu) %>
+                </div>
+            </div>
+        </article>
+
+        <div class="actualite-actions">
+            <% if user_signed_in? && current_user == @actualite.user %>
+                <%= link_to edit_actualite_path(@actualite), class: "button gold-round-button" do %>
+                    <i class="fas fa-edit"></i> Modifier
+                <% end %>
+
+                <%= button_to @actualite, 
+                    method: :delete, 
+                    class: "button btn-danger",
+                    form: { data: { turbo_confirm: "Êtes-vous sûr de vouloir supprimer cette actualité ?" } } do %>
+                    <i class="fas fa-trash-alt"></i> Supprimer
+                <% end %>
+            <% end %>
+
+            <%= link_to actualites_path, class: "button default-round-button" do %>
+                <i class="fas fa-arrow-left"></i> Retour aux actualités
+            <% end %>
+        </div>
+    </main>
+
+    <footer class="actualites-footer">
+        <p>© <%= Time.current.year %> E-City - Tous droits réservés</p>
+    </footer>
+</body>
+</html>

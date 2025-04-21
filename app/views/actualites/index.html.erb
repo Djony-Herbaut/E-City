@@ -1,16 +1,96 @@
-<p style="color: green"><%= notice %></p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Plateforme connectée E-City">
 
-<% content_for :title, "Actualites" %>
+    <%= yield :head %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-<h1>Actualites</h1>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
 
-<div id="actualites">
-  <% @actualites.each do |actualite| %>
-    <%= render actualite %>
-    <p>
-      <%= link_to "Show this actualite", actualite %>
-    </p>
-  <% end %>
-</div>
+    <link rel="stylesheet" href="./css/theme-principale.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-<%= link_to "New actualite", new_actualite_path %>
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag "actualites", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    
+    <script src="https://kit.fontawesome.com/2454e153f7.js" crossorigin="anonymous"></script>
+
+    <title><%= content_for(:title) || "E-City | Actualités" %></title>
+</head>
+<body itemscope itemtype="https://schema.org/website">
+    <header>
+        <nav class="navbar">
+          <h2 class="nav-title">E-city</h2>
+          <h4><%= link_to 'Toutes les Actualités', actualites_path, class: 'link-menu-nav active' %></h4>
+          <h4><%= link_to 'Accueil', '/', class: 'link-menu-nav' %></h4>
+          <h4><%= link_to "Lire l'Histoire complète →", notre_histoire_path, class: 'link-menu-nav' %></h4>
+          <h4><%= link_to 'Les Transports', '#transports', class: 'link-menu-nav' %></h4>
+      
+          <% if user_signed_in? %>
+            <%= form_for :destroy_user_session, url: destroy_user_session_path, method: :delete, html: { data: { confirm: "Tu es sûr de vouloir te déconnecter ?" } } do |f| %>
+            <%= f.submit "Se déconnecter", class: "btn btn-warning" %>
+          <% end %>
+          <% else %>
+            <ul itemprop="genre" class="menu-navbar">
+              <li class="list-menu-nav"><%= link_to 'Devenir Citoyen', new_user_registration_path, class: 'link-menu-nav' %></li>
+              <li class="list-menu-nav"><%= link_to "Connexion à l'espace membre", new_user_session_path, class: 'link-menu-nav' %></li>
+            </ul>
+          <% end %>
+        </nav>
+    </header>
+
+    <main class="actualites-main">
+        <h1 class="actualites-main-title">Quoi de beau ces temps-ci ?!</h1>
+
+        <div id="actualites" class="actualites-container">
+            <% if @actualites.any? %>
+                <div class="actualites-grid">
+                    <% @actualites.each do |actualite| %>
+                        <article class="actualite-card">
+                            <% if actualite.image.attached? %>
+                                <%= image_tag actualite.image, class: "actualite-image", alt: actualite.titre %>
+                            <% else %>
+                                <%= image_tag 'https://via.placeholder.com/600x400?text=E-City+Actualit%C3%A9', class: "actualite-image", alt: "Actualité E-City" %>
+                            <% end %>
+                            
+                            <div class="actualite-content">
+                                <h2 class="actualite-title"><%= actualite.titre %></h2>
+                                <p class="actualite-excerpt"><%= truncate(actualite.contenu, length: 150) %></p>
+                                
+                                <div class="actualite-footer">
+                                    <%= link_to "Lire plus", actualite, class: "actualite-link" %>
+                                    <span class="actualite-date"><%= l(actualite.created_at, format: :short) %></span>
+                                </div>
+                            </div>
+                        </article>
+                    <% end %>
+                </div>
+            <% else %>
+                <div class="actualites-empty">
+                    <p>Aucune actualité n'a été publiée pour le moment.</p>
+                    <%= image_tag 'https://via.placeholder.com/600x400?text=E-City+Actualit%C3%A9', class: "empty-illustration", alt: "Aucune actualité" %>
+                </div>
+            <% end %>
+        </div>
+
+        <% if user_signed_in? %>
+            <div class="actualites-actions">
+                <%= link_to "Nouvelle Actualité", new_actualite_path, class: "new-actualite-button" %>
+            </div>
+        <% end %>
+    </main>
+
+    <footer class="actualites-footer">
+        <p>© <%= Time.current.year %> E-City - Tous droits réservés</p>
+    </footer>
+</body>
+</html>

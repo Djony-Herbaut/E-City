@@ -5,29 +5,40 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="field">
+      <div class="flex-column">
         <%= f.label :nom, "Nom" %>
-        <%= f.text_field :nom, autofocus: true, class: "input" %>
+      </div>
+      <div class="inputForm">
+        <%= f.text_field :nom, autofocus: true, placeholder: "Saisissez votre nom", class: "input" %>
       </div>
 
-      <div class="field">
-        <%= f.label :prenom, "Prénom" %>
-        <%= f.text_field :prenom, class: "input" %>
-      </div>
+        <div class="flex-column">
+          <%= f.label :prenom, "Prénom" %>
+        </div>
+        <div class="inputForm">
+          <%= f.text_field :prenom, placeholder: "Saisissez votre prénom", class: "input" %>
+        </div>
 
-      <div class="field">
+
+      <div class="flex-column">
         <%= f.label :email, "Email" %>
-        <%= f.email_field :email, class: "input" %>
+      </div>
+      <div class="inputForm">
+        <%= f.email_field :email, placeholder: "Saisissez votre email", class: "input" %>
       </div>
 
-      <div class="field">
+      <div class="flex-column">
         <%= f.label :"Votre Mot de Passe" %>
-        <%= f.password_field :password, class: "input" %>
+      </div>
+      <div class="inputForm">
+        <%= f.password_field :password, placeholder: "Saisissez votre mot de passe", class: "input" %>
       </div>
 
-      <div class="field">
+      <div class="flex-column">
         <%= f.label :"La confirmationde votre Mot de Passe", "Confirmation du mot de passe" %>
-        <%= f.password_field :password_confirmation, class: "input" %>
+      </div>
+      <div class="inputForm">
+        <%= f.password_field :password_confirmation, placeholder: "Confirmez votre mot de passe", class: "input" %>
       </div>
 
       <div class="actions">

@@ -1,6 +1,6 @@
 <div class="form-container">
   <div class="form-box">
-    <h2 class="form-title">Sign in</h2>
+    <h2 class="form-title">Se connecter</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form" }) do |f| %>
       <div class="flex-column">
@@ -8,7 +8,7 @@
       </div>
       <div class="inputForm">
         <!-- svg -->
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter your Email", class: "input" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Saisissez votre mail", class: "input" %>
       </div>
 
       <div class="flex-column">
@@ -16,23 +16,20 @@
       </div>
       <div class="inputForm">
         <!-- svg -->
-        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Enter your Password", class: "input" %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Saisissez votre mot de passe", class: "input" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
         <div class="flex-row">
-          <div>
-            <%= f.check_box :remember_me %>
+          <div class="remember-me">
             <%= f.label :remember_me %>
+            <%= f.check_box :remember_me %>
           </div>
-          <span class="span">Forgot password?</span>
         </div>
       <% end %>
 
       <%= f.submit "Sign In", class: "button-submit" %>
     <% end %>
-
-    <p class="p">Don't have an account? <span class="span">Sign Up</span></p>
 
     <div class="devise-links">
       <%= render "devise/shared/links" %>

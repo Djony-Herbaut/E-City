@@ -14,7 +14,6 @@
   }
   
   .form-box {
-    width: 450px;
     background: white;
     border-radius: 20px;
     padding: 30px;
@@ -78,9 +77,9 @@
     outline: none;
   }
   
-  .inputForm:focus-within {
+  /* .inputForm:focus-within {
     border: 1.5px solid #2d79f3;
-  }
+  } */
   
   .flex-row {
     display: flex;
@@ -145,4 +144,10 @@
     ;
   }
   
-      
+  .remember-me {
+    width: 100%;
+  } 
+
+  #user_remember_me {
+    max-width: 30px;
+  }

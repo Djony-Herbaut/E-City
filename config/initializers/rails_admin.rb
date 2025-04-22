@@ -40,5 +40,19 @@ RailsAdmin.config do |config|
     # history_show
     
 
+    config.model 'ObjetConnecte' do
+      list do
+        field :id
+        field :titre
+        field :description
+        field :status, :enum do
+          enum do
+            ObjetConnecte.statuses.keys
+          end
+        end
+        field :user
+      end
+    end
+    
   end
 end

@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  
+  namespace :admin do
+    get "dashboard/index"
+  end
+
   get "pages/e_city_histoire"
   get 'notre-histoire', to: 'pages#e_city_histoire'
   get "users/show"
@@ -21,5 +26,10 @@ Rails.application.routes.draw do
   # root "posts#index"
   root to: "home#index" # root to contrôleur Home avec une action index
 
+  namespace :admin do
+    
+    root to: "dashboard#index" # Panel admin home
+    resources :objet_connectes, only: [:index, :update]
+  end
   resources :actualites
 end

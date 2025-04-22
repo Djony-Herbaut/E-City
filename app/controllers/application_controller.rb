@@ -17,4 +17,15 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource_or_scope)
     root_path
   end
+
+  # Contrôle d'accès administateur
+  def check_admin!
+    redirect_to root_path, alert: "Accès réservé aux administrateurs." unless current_user&.admin?
+  end
+
+  def fil_utilisateur
+    @objets_connectes = ObjetConnecte.approved
+  end
+  
+  
 end

@@ -1,0 +1,20 @@
+<h1>Panel Admin – Requêtes en attente</h1>
+
+<% if @pending_objets.any? %>
+  <% @pending_objets.each do |objet| %>
+    <div style="border: 1px solid #ddd; padding: 10px; margin-bottom: 10px;">
+      <h3><%= objet.titre %></h3>
+      <p><%= objet.description %></p>
+      <% if objet.image.attached? %>
+        <%= image_tag objet.image, width: 200 %>
+      <% end %>
+
+      <%= form_with url: admin_objet_connecte_path(objet), method: :patch do %>
+        <%= submit_tag "Valider", name: "commit" %>
+        <%= submit_tag "Rejeter", name: "commit" %>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <p>Aucune requête en attente.</p>
+<% end %>

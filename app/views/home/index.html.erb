@@ -41,7 +41,11 @@
           <h4><%= link_to 'Accueil', '/', class: 'link-menu-nav' %></h4>
           <h4><%= link_to 'Les Transports', '#transports', class: 'link-menu-nav' %></h4>
           
-      
+          <% if current_user&.admin? %>
+            <%= link_to "Panel Admin", admin_root_path %>
+          <% end %>
+
+
           <% if user_signed_in? %>
             <%= form_for :destroy_user_session, url: destroy_user_session_path, method: :delete, html: { data: { confirm: "Tu es sûr de vouloir te déconnecter ?" } } do |f| %>
             <%= f.submit "Se déconnecter", class: "btn btn-warning" %>

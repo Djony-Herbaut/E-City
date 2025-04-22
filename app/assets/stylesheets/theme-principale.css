@@ -4,6 +4,7 @@
 @import url("./common/text.css");
 @import url("./common/slider.css");
 @import url("./common/histoire.css");
+@import url("./common/form.css");
 
 .top-container {
     height: 85rem;

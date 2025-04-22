@@ -1,80 +1,40 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Plateforme connectée E-City">
-
-    <%= yield :head %>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="./favicon/site.webmanifest">
-
-    <link rel="stylesheet" href="./css/theme-principale.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-    
-    <script src="https://kit.fontawesome.com/2454e153f7.js" crossorigin="anonymous"></script>
-
-</head>
-<body itemscope itemtype="https://schema.org/website">
-    <header>
-        <nav class="navbar">
-          <h2 class="nav-title">E-city</h2>
-          <h4><%= link_to 'Toutes les Actualités', actualites_path, class: 'link-menu-nav' %></h4>
-          <h4><%= link_to 'Notre Histoire', '#histoire', class: 'link-menu-nav' %></h4>
-          <h4><%= link_to 'Les Transports', '#transports', class: 'link-menu-nav' %></h4>
+      <div class="form-container">
+          <%= form_with(model: actualite, local: true, html: { multipart: true, class: "actualite-form" }) do |form| %>
+              <% if actualite.errors.any? %>
+                  <div class="error-messages">
+                      <h2><%= pluralize(actualite.errors.count, "erreur") %> ont empêché la sauvegarde :</h2>
+                      <ul>
+                          <% actualite.errors.each do |error| %>
+                              <li><%= error.full_message %></li>
+                          <% end %>
+                      </ul>
+                  </div>
+              <% end %>
       
-          <% if user_signed_in? %>
-            <%= form_for :destroy_user_session, url: destroy_user_session_path, method: :delete, html: { data: { confirm: "Tu es sûr de vouloir te déconnecter ?" } } do |f| %>
-            <%= f.submit "Se déconnecter", class: "btn btn-warning" %>
+              <div class="form-group">
+                  <%= form.label :titre, class: "form-label" %>
+                  <%= form.text_field :titre, class: "form-input" %>
+              </div>
+      
+              <div class="form-group">
+                  <%= form.label :contenu, class: "form-label" %>
+                  <%= form.text_area :contenu, class: "form-input form-textarea" %>
+              </div>
+      
+              <div class="form-group">
+                  <%= form.label :image, class: "form-label" %>
+                  <%= form.file_field :image, class: "form-input" %>
+                  <% if actualite.image.attached? %>
+                      <%= image_tag actualite.image, class: "form-image-preview" %>
+                  <% end %>
+              </div>
+      
+              <div class="form-actions">
+                  <%= form.submit actualite.persisted? ? "Mettre à jour" : "Créer l'actualité", 
+                                  class: "button gold-round-button" %>
+                                  
+                  <%= link_to "Retour", actualite.persisted? ? actualite_path(actualite) : actualites_path, 
+                              class: "button default-round-button" %>
+              </div>
           <% end %>
-          <% else %>
-            <ul itemprop="genre" class="menu-navbar">
-              <li class="list-menu-nav"><%= link_to 'Devenir Citoyen', new_user_session_path, class: 'link-menu-nav' %></li>
-              <li class="list-menu-nav"><%= link_to "Connexion à l'espace membre", new_user_session_path, class: 'link-menu-nav' %></li>
-            </ul>
-          <% end %>
-        </nav>
-      </header>
-
-
-<%= form_with(model: actualite, local: true, html: { multipart: true }) do |form| %>
-  <% if actualite.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(actualite.errors.count, "erreur") %> ont empêché la sauvegarde :</h2>
-      <ul>
-        <% actualite.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :titre %>
-    <%= form.text_field :titre %>
-  </div>
-
-  <div>
-    <%= form.label :contenu %>
-    <%= form.text_area :contenu %>
-  </div>
-
-  <div>
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
-
-  <div>
-    <%= form.submit "Créer l'actualité", class: "button gold-round-button" %>
-  </div>
-<% end %>
+      </div>

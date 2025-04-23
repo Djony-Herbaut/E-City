@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "objet_connectes/index"
   
   namespace :admin do
     get "dashboard/index"
@@ -31,5 +32,9 @@ Rails.application.routes.draw do
     root to: "dashboard#index" # Panel admin home
     resources :objet_connectes, only: [:index, :update]
   end
+
   resources :actualites
+
+  resources :objet_connectes, only: [:index]
+  
 end

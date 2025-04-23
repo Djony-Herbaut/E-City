@@ -1,5 +1,6 @@
-<h1>Panel Admin – Requêtes en attente</h1>
+<h1>Panel Admin – Requêtes</h1>
 
+<h2>⏳ Requêtes en attente</h2>
 <% if @pending_objets.any? %>
   <% @pending_objets.each do |objet| %>
     <div style="border: 1px solid #ddd; padding: 10px; margin-bottom: 10px;">
@@ -17,4 +18,34 @@
   <% end %>
 <% else %>
   <p>Aucune requête en attente.</p>
+<% end %>
+
+<h2>✅ Objets approuvés</h2>
+<% if @approved_objets.any? %>
+  <% @approved_objets.each do |objet| %>
+    <div style="border: 1px solid #cfc; padding: 10px; margin-bottom: 10px;">
+      <h3><%= objet.titre %></h3>
+      <p><%= objet.description %></p>
+      <% if objet.image.attached? %>
+        <%= image_tag objet.image, width: 200 %>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <p>Aucun objet approuvé.</p>
+<% end %>
+
+<h2>❌ Objets refusés</h2>
+<% if @rejected_objets.any? %>
+  <% @rejected_objets.each do |objet| %>
+    <div style="border: 1px solid #fcc; padding: 10px; margin-bottom: 10px;">
+      <h3><%= objet.titre %></h3>
+      <p><%= objet.description %></p>
+      <% if objet.image.attached? %>
+        <%= image_tag objet.image, width: 200 %>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <p>Aucun objet refusé.</p>
 <% end %>

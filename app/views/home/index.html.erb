@@ -111,6 +111,42 @@
           <%= link_to "Toutes nos actus →", actualites_path, class: "btn-all" %>
         </section>
 
+        <section class="actualites-section">
+          <h2 class="title">Objets Connectés</h2>
+
+          <div class="carousel">
+            <% @objets_connectes.last(5).each_with_index do |objet, index| %>
+              <input type="radio" name="carousel-objets" id="objet-slide-<%= index %>" <%= 'checked' if index == 0 %>>
+            <% end %>
+
+            <div class="slides">
+              <% @objets_connectes.last(5).each_with_index do |objet, index| %>
+                <div class="slide">
+                  <div class="image">
+                    <% if objet.image.attached? %>
+                      <%= image_tag objet.image, alt: objet.titre %>
+                    <% else %>
+                      <img src="https://via.placeholder.com/850x350?text=Pas+d'image" alt="Pas d'image">
+                    <% end %>
+                  </div>
+                  <div class="infos">
+                    <h3><%= objet.titre %></h3>
+                    <p><%= truncate(objet.description, length: 150) %></p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+
+            <div class="nav">
+              <% @objets_connectes.last(5).each_with_index do |_, index| %>
+                <label for="objet-slide-<%= index %>"></label>
+              <% end %>
+            </div>
+          </div>
+
+          <%= link_to "Voir tous les objets →", objet_connectes_path, class: "btn-all" %>
+        </section>
+
         <section class="global-container global-container-column">
             <h2 class="title gold-title" id="transports">
                 Le Réseaux de Transport de E-City 

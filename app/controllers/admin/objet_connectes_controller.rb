@@ -1,27 +1,15 @@
 class Admin::ObjetConnectesController < ApplicationController
-  before_action :authenticate_user!
-  before_action :check_admin!
-
   def index
-    @objet_connectes = ObjetConnecte.pending
+    @objets = ObjetConnecte.all
   end
 
   def update
-    @objet_connecte = ObjetConnecte.find(params[:id])
-
-    case params[:commit]
-    when "Valider"
-      @objet_connecte.update(status: "approved")
-    when "Rejeter"
-      @objet_connecte.update(status: "rejected")
+    @objet = ObjetConnecte.find(params[:id])
+    if params[:commit] == "Valider"
+      @objet.update(status: 1)
+    elsif params[:commit] == "Rejeter"
+      @objet.update(status: 2)
     end
-
-    redirect_to admin_objet_connectes_path
-  end
-
-  private
-
-  def check_admin!
-    redirect_to root_path, alert: "Accès réservé aux administrateurs." unless current_user&.admin?
+    redirect_to admin_root_path
   end
 end

@@ -3,7 +3,9 @@ class Admin::DashboardController < ApplicationController
   before_action :check_admin!
 
   def index
-    @pending_objets = ObjetConnecte.pending
+    @pending_objets  = ObjetConnecte.where(status: 0)
+    @approved_objets = ObjetConnecte.where(status: 1)
+    @rejected_objets = ObjetConnecte.where(status: 2)
   end
 
   private

@@ -22,10 +22,6 @@ class ApplicationController < ActionController::Base
   def check_admin!
     redirect_to root_path, alert: "Accès réservé aux administrateurs." unless current_user&.admin?
   end
-
-  def fil_utilisateur
-    @objets_connectes = ObjetConnecte.approved
-  end
   
   
 end

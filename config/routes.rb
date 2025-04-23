@@ -35,6 +35,6 @@ Rails.application.routes.draw do
 
   resources :actualites
 
-  resources :objet_connectes, only: [:index]
-  
+  resources :objet_connectes
+
 end

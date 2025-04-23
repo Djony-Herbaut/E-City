@@ -1,0 +1,21 @@
+<h1>Ajouter un nouvel objet connecté</h1>
+
+<%= render 'form', objet_connecte: @objet_connecte %>
+
+<%= link_to '← Retour à la liste', objet_connectes_path, class: 'btn-retour' %>
+
+<style>
+  .btn-retour {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #ddd;
+    color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+  }
+
+  .btn-retour:hover {
+    background-color: #ccc;
+  }
+</style>

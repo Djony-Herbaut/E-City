@@ -6,6 +6,7 @@ class User < ApplicationRecord
   
   belongs_to :grade, optional: true
   has_many :actualites
+  has_many :objet_connectes
 
   # Callback pour mettre à jour le grade avant la sauvegarde
   before_save :update_grade

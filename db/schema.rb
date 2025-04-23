@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_22_175824) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_23_191012) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -52,6 +52,22 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_22_175824) do
   create_table "grades", force: :cascade do |t|
     t.string "nom"
     t.integer "seuil_min_points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "category"
+    t.string "location_type"
+    t.string "name"
+    t.string "address"
+    t.integer "area"
+    t.string "neighborhood"
+    t.string "status"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "transport_line"
+    t.string "transport_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

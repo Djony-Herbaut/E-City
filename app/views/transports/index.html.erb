@@ -1,0 +1,82 @@
+<div class="global-container">
+  <h1 class="gold-title">Réseau de Transport E-City</h1>
+
+  <!-- Filtres -->
+  <div class="form-container">
+    <%= form_with url: transports_path, method: :get, local: true do |f| %>
+      <div class="form-group">
+        <%= f.label :category, "Catégorie", class: "form-label" %>
+        <%= f.select :category, 
+            options_for_select([['Toutes', '']] + @categories.map { |c| [c.humanize, c] }, 
+            params[:category]), {}, class: "form-input" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :status, "État", class: "form-label" %>
+        <%= f.select :status, 
+            options_for_select([['Tous', '']] + @statuses.map { |s| [s.humanize, s] }, 
+            params[:status]), {}, class: "form-input" %>
+      </div>
+
+      <% if @access_level >= 1 %>
+        <div class="form-group">
+          <%= f.label :neighborhood, "Quartier", class: "form-label" %>
+          <%= f.select :neighborhood, 
+              options_for_select([['Tous', '']] + @neighborhoods.map { |n| [n.humanize, n] }, 
+              params[:neighborhood]), {}, class: "form-input" %>
+        </div>
+      <% end %>
+
+      <div class="form-actions">
+        <%= f.submit "Filtrer", class: "button gold-round-button" %>
+        <%= link_to "Réinitialiser", transports_path, class: "button default-round-button" %>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Résultats -->
+  <div class="transport-results">
+    <% if @locations.empty? %>
+      <p class="default-text">Aucun résultat trouvé avec ces critères.</p>
+    <% else %>
+      <div class="transport-grid">
+        <% @locations.each do |location| %>
+          <div class="transport-card">
+            <div class="card-header <%= location.category %>">
+              <h3><%= location.name %></h3>
+              <span class="badge <%= location.location_type %>">
+                <%= location.location_type.humanize %>
+              </span>
+            </div>
+            
+            <div class="card-body">
+              <p class="address"><%= location.address %></p>
+              
+              <% if location.transport_line.present? %>
+                <p class="line-info">
+                  Ligne <strong><%= location.transport_line %></strong> (<%= location.transport_type %>)
+                </p>
+              <% end %>
+
+              <div class="meta">
+                <span class="status <%= location.status %>">
+                  <%= location.status.humanize %>
+                </span>
+                
+                <% if @access_level >= 1 && location.neighborhood.present? %>
+                  <span class="neighborhood">
+                    <%= location.neighborhood %>
+                  </span>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="pagination">
+        <%= paginate @locations %>
+      </div>
+    <% end %>
+  </div>
+</div>

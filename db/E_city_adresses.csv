@@ -1,0 +1,401 @@
+id,categorie,type,nom,adresse,superficie,quartier,statut,latitude,longitude,ligne_transport,type_transport
+1,sport,gymnase,Gymnase des Champions,"12 Rue Athlétique, E-City",2500,,ouvert,48.8566,2.3522,,
+2,sport,citystade,CityStade Olympique,"45 Avenue Sportive, E-City",800,,ouvert,48.8575,2.3533,,
+3,sport,terrain_foot,Stade des Étoiles,"78 Boulevard des Sportifs, E-City",5000,,ouvert,48.8581,2.3544,,
+4,culture,salle_fete,Salle des Fêtes Centrale,"2 Place de la Mairie, E-City",1200,Centre,ouvert,48.8550,2.3500,,
+5,commerce,centre_commercial,E-City West,"100 Rue des Commerces, E-City",15000,West,ouvert,48.8600,2.3400,,
+6,culture,salle_concert,Arena EC,"1 Esplanade des Spectacles, E-City",25000,,ouvert,48.8620,2.3450,,
+7,urbanisme,quartier,La Défense EC,"Quartier Nord, E-City",,Nord,actif,48.8700,2.3300,,
+8,urbanisme,quartier,Les Hauts de E-City,"Colline Ouest, E-City",,Ouest,actif,48.8500,2.3000,,
+9,parc,parc,Parc Central,"Avenue des Platanes, E-City",200000,,ouvert,48.8530,2.3480,,
+10,transport,arret_tram,Gare Centrale,"Place de la Gare, E-City",,Centre,ouvert,48.8560,2.3510,T1,tram
+11,transport,arret_tram,Universite,"Avenue des Étudiants, E-City",,Nord,ouvert,48.8600,2.3550,T1,tram
+12,transport,arret_bus,Mairie,"Place de l'Hôtel de Ville, E-City",,Centre,ouvert,48.8555,2.3505,B1,bus
+13,transport,arret_bus,Les Rosiers,"Rue des Jardins, E-City",,Est,ouvert,48.8540,2.3600,B1,bus
+14,sport,citystade,CityStade du Lac,"Chemin des Pêcheurs, E-City",750,,ouvert,48.8480,2.3420,,
+15,culture,salle_fete,Salle du Vieux Port,"Quai des Marins, E-City",900,Historique,ouvert,48.8520,2.3490,,
+16,commerce,centre_commercial,Galerie Émeraude,"200 Rue des Boutiques, E-City",12000,Est,ouvert,48.8570,2.3620,,
+17,urbanisme,quartier,Quartier Historique,"Vieille Ville, E-City",,Centre,actif,48.8535,2.3485,,
+18,parc,parc,Jardin Botanique,"Route des Serres, E-City",50000,,ouvert,48.8470,2.3380,,
+19,transport,arret_tram,Beaux-Arts,"Avenue Culturelle, E-City",,Sud,ouvert,48.8500,2.3450,T2,tram
+20,transport,arret_bus,Hôpital,"Boulevard de la Santé, E-City",,Ouest,ouvert,48.8490,2.3200,B2,bus
+21,sport,gymnase,Gymnase Jean Moulin,"34 Rue Pierre Curie, E-City",3200,,ouvert,48.8585,2.3560,,
+22,sport,gymnase,Gymnase Olympia,"156 Avenue des Sports, E-City",2800,,ouvert,48.8610,2.3590,,
+23,sport,citystade,CityStade Phoenix,"22 Rue des Tournois, E-City",850,,ouvert,48.8570,2.3488,,
+24,sport,citystade,CityStade Horizon,"10 Place des Jeux, E-City",820,,ouvert,48.8495,2.3467,,
+25,sport,citystade,CityStade Neptune,"67 Boulevard Maritime, E-City",790,,ouvert,48.8522,2.3436,,
+26,sport,citystade,CityStade Victoire,"15 Rue des Champions, E-City",830,,ouvert,48.8615,2.3478,,
+27,sport,citystade,CityStade Galaxie,"89 Avenue des Étoiles, E-City",770,,ouvert,48.8532,2.3512,,
+28,sport,citystade,CityStade Liberté,"44 Rue Fraternité, E-City",810,,ouvert,48.8553,2.3467,,
+29,sport,terrain_foot,Stade Municipal,"120 Avenue des Sportifs, E-City",6500,,ouvert,48.8602,2.3487,,
+30,culture,salle_fete,Salle Belle Époque,"45 Rue des Festivités, E-City",1350,Nord,ouvert,48.8587,2.3502,,
+31,culture,salle_fete,Salle Renaissance,"78 Avenue des Célébrations, E-City",1100,Sud,ouvert,48.8498,2.3455,,
+32,culture,salle_fete,Salle Royale,"23 Place du Marché, E-City",1500,Est,ouvert,48.8545,2.3612,,
+33,commerce,centre_commercial,Grand Plaza,"350 Boulevard des Achats, E-City",18000,Sud,ouvert,48.8480,2.3470,,
+34,commerce,centre_commercial,Galerie Cristal,"180 Rue du Commerce, E-City",13500,Nord,ouvert,48.8640,2.3520,,
+35,urbanisme,immeuble,Tour Émeraude,"1 Esplanade La Défense EC, E-City",4500,La Défense EC,actif,48.8701,2.3301,,
+36,urbanisme,immeuble,Tour Diamant,"2 Esplanade La Défense EC, E-City",5200,La Défense EC,actif,48.8702,2.3302,,
+37,urbanisme,immeuble,Tour Rubis,"3 Esplanade La Défense EC, E-City",4300,La Défense EC,actif,48.8703,2.3303,,
+38,urbanisme,immeuble,Tour Saphir,"4 Esplanade La Défense EC, E-City",4800,La Défense EC,actif,48.8704,2.3304,,
+39,urbanisme,immeuble,Tour Opale,"5 Esplanade La Défense EC, E-City",5100,La Défense EC,actif,48.8705,2.3305,,
+40,urbanisme,immeuble,Tour Topaze,"6 Esplanade La Défense EC, E-City",4700,La Défense EC,actif,48.8706,2.3306,,
+41,urbanisme,immeuble,Tour Ambre,"7 Esplanade La Défense EC, E-City",4900,La Défense EC,actif,48.8707,2.3307,,
+42,urbanisme,immeuble,Tour Jade,"8 Esplanade La Défense EC, E-City",5300,La Défense EC,actif,48.8708,2.3308,,
+43,urbanisme,immeuble,Tour Cristal,"9 Esplanade La Défense EC, E-City",5000,La Défense EC,actif,48.8709,2.3309,,
+44,urbanisme,immeuble,Tour Onyx,"10 Esplanade La Défense EC, E-City",4600,La Défense EC,actif,48.8710,2.3310,,
+45,urbanisme,immeuble,Tour Agate,"11 Esplanade La Défense EC, E-City",4200,La Défense EC,actif,48.8711,2.3311,,
+46,urbanisme,immeuble,Tour Améthyste,"12 Esplanade La Défense EC, E-City",5400,La Défense EC,actif,48.8712,2.3312,,
+47,urbanisme,immeuble,Tour Grenat,"13 Esplanade La Défense EC, E-City",4100,La Défense EC,actif,48.8713,2.3313,,
+48,urbanisme,immeuble,Tour Turquoise,"14 Esplanade La Défense EC, E-City",4800,La Défense EC,actif,48.8714,2.3314,,
+49,urbanisme,immeuble,Tour Ivoire,"15 Esplanade La Défense EC, E-City",5200,La Défense EC,actif,48.8715,2.3315,,
+50,urbanisme,immeuble,Tour Perle,"16 Esplanade La Défense EC, E-City",4700,La Défense EC,actif,48.8716,2.3316,,
+51,urbanisme,immeuble,Tour Quartz,"17 Esplanade La Défense EC, E-City",5100,La Défense EC,actif,48.8717,2.3317,,
+52,urbanisme,immeuble,Tour Corail,"18 Esplanade La Défense EC, E-City",4400,La Défense EC,actif,48.8718,2.3318,,
+53,urbanisme,immeuble,Tour Amétrine,"19 Esplanade La Défense EC, E-City",4900,La Défense EC,actif,48.8719,2.3319,,
+54,urbanisme,immeuble,Tour Lazulite,"20 Esplanade La Défense EC, E-City",5300,La Défense EC,actif,48.8720,2.3320,,
+55,urbanisme,maison,Résidence Élégance,"1 Avenue des Érables, Les Hauts de E-City",350,Les Hauts de E-City,actif,48.8501,2.3001,,
+56,urbanisme,maison,Résidence Distinction,"2 Avenue des Érables, Les Hauts de E-City",380,Les Hauts de E-City,actif,48.8502,2.3002,,
+57,urbanisme,maison,Résidence Prestige,"3 Avenue des Érables, Les Hauts de E-City",400,Les Hauts de E-City,actif,48.8503,2.3003,,
+58,urbanisme,maison,Résidence Excellence,"4 Avenue des Érables, Les Hauts de E-City",420,Les Hauts de E-City,actif,48.8504,2.3004,,
+59,urbanisme,maison,Résidence Splendeur,"5 Avenue des Érables, Les Hauts de E-City",360,Les Hauts de E-City,actif,48.8505,2.3005,,
+60,urbanisme,maison,Résidence Luxe,"1 Boulevard des Chênes, Les Hauts de E-City",390,Les Hauts de E-City,actif,48.8506,2.3006,,
+61,urbanisme,maison,Résidence Raffinement,"2 Boulevard des Chênes, Les Hauts de E-City",410,Les Hauts de E-City,actif,48.8507,2.3007,,
+62,urbanisme,maison,Résidence Grandeur,"3 Boulevard des Chênes, Les Hauts de E-City",430,Les Hauts de E-City,actif,48.8508,2.3008,,
+63,urbanisme,maison,Résidence Majesté,"4 Boulevard des Chênes, Les Hauts de E-City",370,Les Hauts de E-City,actif,48.8509,2.3009,,
+64,urbanisme,maison,Résidence Noble,"5 Boulevard des Chênes, Les Hauts de E-City",400,Les Hauts de E-City,actif,48.8510,2.3010,,
+65,urbanisme,maison,Résidence Élite,"1 Rue des Tilleuls, Les Hauts de E-City",380,Les Hauts de E-City,actif,48.8511,2.3011,,
+66,urbanisme,maison,Résidence Éclat,"2 Rue des Tilleuls, Les Hauts de E-City",410,Les Hauts de E-City,actif,48.8512,2.3012,,
+67,urbanisme,maison,Résidence Finesse,"3 Rue des Tilleuls, Les Hauts de E-City",430,Les Hauts de E-City,actif,48.8513,2.3013,,
+68,urbanisme,maison,Résidence Harmonie,"4 Rue des Tilleuls, Les Hauts de E-City",390,Les Hauts de E-City,actif,48.8514,2.3014,,
+69,urbanisme,maison,Résidence Opulence,"5 Rue des Tilleuls, Les Hauts de E-City",420,Les Hauts de E-City,actif,48.8515,2.3015,,
+70,urbanisme,maison,Résidence Sérénité,"1 Chemin des Pins, Les Hauts de E-City",400,Les Hauts de E-City,actif,48.8516,2.3016,,
+71,urbanisme,maison,Résidence Grâce,"2 Chemin des Pins, Les Hauts de E-City",370,Les Hauts de E-City,actif,48.8517,2.3017,,
+72,urbanisme,maison,Résidence Charme,"3 Chemin des Pins, Les Hauts de E-City",390,Les Hauts de E-City,actif,48.8518,2.3018,,
+73,urbanisme,maison,Résidence Délicatesse,"4 Chemin des Pins, Les Hauts de E-City",410,Les Hauts de E-City,actif,48.8519,2.3019,,
+74,urbanisme,maison,Résidence Tranquillité,"5 Chemin des Pins, Les Hauts de E-City",380,Les Hauts de E-City,actif,48.8520,2.3020,,
+75,urbanisme,maison,Résidence Allure,"1 Impasse des Acacias, Les Hauts de E-City",400,Les Hauts de E-City,actif,48.8521,2.3021,,
+76,urbanisme,maison,Résidence Splendide,"2 Impasse des Acacias, Les Hauts de E-City",420,Les Hauts de E-City,actif,48.8522,2.3022,,
+77,urbanisme,maison,Résidence Suprême,"3 Impasse des Acacias, Les Hauts de E-City",440,Les Hauts de E-City,actif,48.8523,2.3023,,
+78,urbanisme,maison,Résidence Magnificence,"4 Impasse des Acacias, Les Hauts de E-City",410,Les Hauts de E-City,actif,48.8524,2.3024,,
+79,urbanisme,maison,Résidence Perfection,"5 Impasse des Acacias, Les Hauts de E-City",390,Les Hauts de E-City,actif,48.8525,2.3025,,
+80,urbanisme,maison,Résidence Superbe,"1 Allée des Marronniers, Les Hauts de E-City",420,Les Hauts de E-City,actif,48.8526,2.3026,,
+81,urbanisme,maison,Résidence Prospérité,"2 Allée des Marronniers, Les Hauts de E-City",410,Les Hauts de E-City,actif,48.8527,2.3027,,
+82,urbanisme,maison,Résidence Radiance,"3 Allée des Marronniers, Les Hauts de E-City",430,Les Hauts de E-City,actif,48.8528,2.3028,,
+83,urbanisme,maison,Résidence Aisance,"4 Allée des Marronniers, Les Hauts de E-City",400,Les Hauts de E-City,actif,48.8529,2.3029,,
+84,urbanisme,maison,Résidence Éminence,"5 Allée des Marronniers, Les Hauts de E-City",380,Les Hauts de E-City,actif,48.8530,2.3030,,
+85,urbanisme,maison,Résidence Excellence,"1 Place des Platanes, Les Hauts de E-City",420,Les Hauts de E-City,actif,48.8531,2.3031,,
+86,urbanisme,maison,Résidence Grandiose,"2 Place des Platanes, Les Hauts de E-City",450,Les Hauts de E-City,actif,48.8532,2.3032,,
+87,urbanisme,maison,Résidence Distinguée,"3 Place des Platanes, Les Hauts de E-City",410,Les Hauts de E-City,actif,48.8533,2.3033,,
+88,urbanisme,maison,Résidence Noblesse,"4 Place des Platanes, Les Hauts de E-City",390,Les Hauts de E-City,actif,48.8534,2.3034,,
+89,urbanisme,maison,Résidence Somptueuse,"5 Place des Platanes, Les Hauts de E-City",420,Les Hauts de E-City,actif,48.8535,2.3035,,
+90,urbanisme,maison,Résidence Sublime,"1 Rue des Bouleaux, Les Hauts de E-City",400,Les Hauts de E-City,actif,48.8536,2.3036,,
+91,urbanisme,maison,Résidence Suave,"2 Rue des Bouleaux, Les Hauts de E-City",430,Les Hauts de E-City,actif,48.8537,2.3037,,
+92,urbanisme,maison,Résidence Dignité,"3 Rue des Bouleaux, Les Hauts de E-City",410,Les Hauts de E-City,actif,48.8538,2.3038,,
+93,urbanisme,maison,Résidence Étoile,"4 Rue des Bouleaux, Les Hauts de E-City",390,Les Hauts de E-City,actif,48.8539,2.3039,,
+94,urbanisme,maison,Résidence Honorable,"5 Rue des Bouleaux, Les Hauts de E-City",420,Les Hauts de E-City,actif,48.8540,2.3040,,
+95,urbanisme,quartier,Quartier des Lilas,"Zone Est, E-City",,Est,actif,48.8550,2.3600,,
+96,urbanisme,quartier,Quartier des Ormes,"Zone Ouest, E-City",,Ouest,actif,48.8490,2.3300,,
+97,urbanisme,quartier,Quartier des Saules,"Zone Sud, E-City",,Sud,actif,48.8450,2.3450,,
+98,urbanisme,quartier,Quartier des Peupliers,"Zone Nord, E-City",,Nord,actif,48.8625,2.3500,,
+99,urbanisme,immeuble_appartements,Résidence Floralis,"1 Rue des Fleurs, Quartier des Lilas",1800,Quartier des Lilas,actif,48.8551,2.3601,,
+100,urbanisme,immeuble_appartements,Résidence Verdure,"2 Rue des Fleurs, Quartier des Lilas",1600,Quartier des Lilas,actif,48.8552,2.3602,,
+101,urbanisme,immeuble_appartements,Résidence Amaryllis,"3 Rue des Fleurs, Quartier des Lilas",1700,Quartier des Lilas,actif,48.8553,2.3603,,
+102,urbanisme,immeuble_appartements,Résidence Lavande,"4 Rue des Fleurs, Quartier des Lilas",1900,Quartier des Lilas,actif,48.8554,2.3604,,
+103,urbanisme,maison,Maison Lilas-1,"5 Rue des Fleurs, Quartier des Lilas",160,Quartier des Lilas,actif,48.8555,2.3605,,
+104,urbanisme,maison,Maison Lilas-2,"6 Rue des Fleurs, Quartier des Lilas",150,Quartier des Lilas,actif,48.8556,2.3606,,
+105,urbanisme,maison,Maison Lilas-3,"7 Rue des Fleurs, Quartier des Lilas",170,Quartier des Lilas,actif,48.8557,2.3607,,
+106,urbanisme,maison,Maison Lilas-4,"8 Rue des Fleurs, Quartier des Lilas",155,Quartier des Lilas,actif,48.8558,2.3608,,
+107,urbanisme,maison,Maison Lilas-5,"9 Rue des Fleurs, Quartier des Lilas",165,Quartier des Lilas,actif,48.8559,2.3609,,
+108,urbanisme,maison,Maison Lilas-6,"10 Rue des Fleurs, Quartier des Lilas",160,Quartier des Lilas,actif,48.8560,2.3610,,
+109,urbanisme,maison,Maison Lilas-7,"1 Avenue des Roses, Quartier des Lilas",150,Quartier des Lilas,actif,48.8561,2.3611,,
+110,urbanisme,maison,Maison Lilas-8,"2 Avenue des Roses, Quartier des Lilas",170,Quartier des Lilas,actif,48.8562,2.3612,,
+111,urbanisme,maison,Maison Lilas-9,"3 Avenue des Roses, Quartier des Lilas",155,Quartier des Lilas,actif,48.8563,2.3613,,
+112,urbanisme,maison,Maison Lilas-10,"4 Avenue des Roses, Quartier des Lilas",165,Quartier des Lilas,actif,48.8564,2.3614,,
+113,urbanisme,maison,Maison Lilas-11,"5 Avenue des Roses, Quartier des Lilas",160,Quartier des Lilas,actif,48.8565,2.3615,,
+114,urbanisme,maison,Maison Lilas-12,"6 Avenue des Roses, Quartier des Lilas",150,Quartier des Lilas,actif,48.8566,2.3616,,
+115,urbanisme,maison,Maison Lilas-13,"7 Avenue des Roses, Quartier des Lilas",170,Quartier des Lilas,actif,48.8567,2.3617,,
+116,urbanisme,maison,Maison Lilas-14,"8 Avenue des Roses, Quartier des Lilas",155,Quartier des Lilas,actif,48.8568,2.3618,,
+117,urbanisme,maison,Maison Lilas-15,"1 Boulevard des Tulipes, Quartier des Lilas",165,Quartier des Lilas,actif,48.8569,2.3619,,
+118,urbanisme,maison,Maison Lilas-16,"2 Boulevard des Tulipes, Quartier des Lilas",160,Quartier des Lilas,actif,48.8570,2.3620,,
+119,urbanisme,maison,Maison Lilas-17,"3 Boulevard des Tulipes, Quartier des Lilas",150,Quartier des Lilas,actif,48.8571,2.3621,,
+120,urbanisme,maison,Maison Lilas-18,"4 Boulevard des Tulipes, Quartier des Lilas",170,Quartier des Lilas,actif,48.8572,2.3622,,
+121,urbanisme,maison,Maison Lilas-19,"5 Boulevard des Tulipes, Quartier des Lilas",155,Quartier des Lilas,actif,48.8573,2.3623,,
+122,urbanisme,maison,Maison Lilas-20,"6 Boulevard des Tulipes, Quartier des Lilas",165,Quartier des Lilas,actif,48.8574,2.3624,,
+123,urbanisme,maison,Maison Lilas-21,"7 Boulevard des Tulipes, Quartier des Lilas",160,Quartier des Lilas,actif,48.8575,2.3625,,
+124,urbanisme,maison,Maison Lilas-22,"8 Boulevard des Tulipes, Quartier des Lilas",150,Quartier des Lilas,actif,48.8576,2.3626,,
+125,urbanisme,maison,Maison Lilas-23,"1 Place des Dahlias, Quartier des Lilas",170,Quartier des Lilas,actif,48.8577,2.3627,,
+126,urbanisme,maison,Maison Lilas-24,"2 Place des Dahlias, Quartier des Lilas",155,Quartier des Lilas,actif,48.8578,2.3628,,
+127,urbanisme,maison,Maison Lilas-25,"3 Place des Dahlias, Quartier des Lilas",165,Quartier des Lilas,actif,48.8579,2.3629,,
+128,urbanisme,maison,Maison Lilas-26,"4 Place des Dahlias, Quartier des Lilas",160,Quartier des Lilas,actif,48.8580,2.3630,,
+129,urbanisme,maison,Maison Lilas-27,"5 Place des Dahlias, Quartier des Lilas",150,Quartier des Lilas,actif,48.8581,2.3631,,
+130,urbanisme,maison,Maison Lilas-28,"6 Place des Dahlias, Quartier des Lilas",170,Quartier des Lilas,actif,48.8582,2.3632,,
+131,urbanisme,immeuble_appartements,Résidence Horizon,"1 Rue des Cèdres, Quartier des Ormes",1700,Quartier des Ormes,actif,48.8491,2.3301,,
+132,urbanisme,immeuble_appartements,Résidence Azur,"2 Rue des Cèdres, Quartier des Ormes",1800,Quartier des Ormes,actif,48.8492,2.3302,,
+133,urbanisme,immeuble_appartements,Résidence Ciel,"3 Rue des Cèdres, Quartier des Ormes",1600,Quartier des Ormes,actif,48.8493,2.3303,,
+134,urbanisme,immeuble_appartements,Résidence Marine,"4 Rue des Cèdres, Quartier des Ormes",1900,Quartier des Ormes,actif,48.8494,2.3304,,
+135,urbanisme,maison,Maison Ormes-1,"5 Rue des Cèdres, Quartier des Ormes",155,Quartier des Ormes,actif,48.8495,2.3305,,
+136,urbanisme,maison,Maison Ormes-2,"6 Rue des Cèdres, Quartier des Ormes",165,Quartier des Ormes,actif,48.8496,2.3306,,
+137,urbanisme,maison,Maison Ormes-3,"7 Rue des Cèdres, Quartier des Ormes",160,Quartier des Ormes,actif,48.8497,2.3307,,
+138,urbanisme,maison,Maison Ormes-4,"8 Rue des Cèdres, Quartier des Ormes",150,Quartier des Ormes,actif,48.8498,2.3308,,
+139,urbanisme,maison,Maison Ormes-5,"9 Rue des Cèdres, Quartier des Ormes",170,Quartier des Ormes,actif,48.8499,2.3309,,
+140,urbanisme,maison,Maison Ormes-6,"10 Rue des Cèdres, Quartier des Ormes",155,Quartier des Ormes,actif,48.8500,2.3310,,
+141,urbanisme,maison,Maison Ormes-7,"1 Avenue des Cyprès, Quartier des Ormes",165,Quartier des Ormes,actif,48.8501,2.3311,,
+142,urbanisme,maison,Maison Ormes-8,"2 Avenue des Cyprès, Quartier des Ormes",160,Quartier des Ormes,actif,48.8502,2.3312,,
+143,urbanisme,maison,Maison Ormes-9,"3 Avenue des Cyprès, Quartier des Ormes",150,Quartier des Ormes,actif,48.8503,2.3313,,
+144,urbanisme,maison,Maison Ormes-10,"4 Avenue des Cyprès, Quartier des Ormes",170,Quartier des Ormes,actif,48.8504,2.3314,,
+145,urbanisme,maison,Maison Ormes-11,"5 Avenue des Cyprès, Quartier des Ormes",155,Quartier des Ormes,actif,48.8505,2.3315,,
+146,urbanisme,maison,Maison Ormes-12,"6 Avenue des Cyprès, Quartier des Ormes",165,Quartier des Ormes,actif,48.8506,2.3316,,
+147,urbanisme,maison,Maison Ormes-13,"7 Avenue des Cyprès, Quartier des Ormes",160,Quartier des Ormes,actif,48.8507,2.3317,,
+148,urbanisme,maison,Maison Ormes-14,"8 Avenue des Cyprès, Quartier des Ormes",150,Quartier des Ormes,actif,48.8508,2.3318,,
+149,urbanisme,maison,Maison Ormes-15,"1 Boulevard des Séquoias, Quartier des Ormes",170,Quartier des Ormes,actif,48.8509,2.3319,,
+150,urbanisme,maison,Maison Ormes-16,"2 Boulevard des Séquoias, Quartier des Ormes",155,Quartier des Ormes,actif,48.8510,2.3320,,
+151,urbanisme,maison,Maison Ormes-17,"3 Boulevard des Séquoias, Quartier des Ormes",165,Quartier des Ormes,actif,48.8511,2.3321,,
+152,urbanisme,maison,Maison Ormes-18,"4 Boulevard des Séquoias, Quartier des Ormes",160,Quartier des Ormes,actif,48.8512,2.3322,,
+153,urbanisme,maison,Maison Ormes-19,"5 Boulevard des Séquoias, Quartier des Ormes",150,Quartier des Ormes,actif,48.8513,2.3323,,
+154,urbanisme,maison,Maison Ormes-20,"6 Boulevard des Séquoias, Quartier des Ormes",170,Quartier des Ormes,actif,48.8514,2.3324,,
+155,urbanisme,maison,Maison Ormes-21,"7 Boulevard des Séquoias, Quartier des Ormes",155,Quartier des Ormes,actif,48.8515,2.3325,,
+156,urbanisme,maison,Maison Ormes-22,"8 Boulevard des Séquoias, Quartier des Ormes",165,Quartier des Ormes,actif,48.8516,2.3326,,
+157,urbanisme,maison,Maison Ormes-23,"1 Place des Ifs, Quartier des Ormes",160,Quartier des Ormes,actif,48.8517,2.3327,,
+158,urbanisme,maison,Maison Ormes-24,"2 Place des Ifs, Quartier des Ormes",150,Quartier des Ormes,actif,48.8518,2.3328,,
+159,urbanisme,maison,Maison Ormes-25,"3 Place des Ifs, Quartier des Ormes",170,Quartier des Ormes,actif,48.8519,2.3329,,
+160,urbanisme,maison,Maison Ormes-26,"4 Place des Ifs, Quartier des Ormes",155,Quartier des Ormes,actif,48.8520,2.3330,,
+161,urbanisme,maison,Maison Ormes-27,"5 Place des Ifs, Quartier des Ormes",165,Quartier des Ormes,actif,48.8521,2.3331,,
+162,urbanisme,maison,Maison Ormes-28,"6 Place des Ifs, Quartier des Ormes",160,Quartier des Ormes,actif,48.8522,2.3332,,
+163,urbanisme,immeuble_appartements,Résidence Soleil,"1 Rue des Oliviers, Quartier des Saules",1800,Quartier des Saules,actif,48.8451,2.3451,,
+164,urbanisme,immeuble_appartements,Résidence Lumière,"2 Rue des Oliviers, Quartier des Saules",1700,Quartier des Saules,actif,48.8452,2.3452,,
+165,urbanisme,immeuble_appartements,Résidence Étoile,"3 Rue des Oliviers, Quartier des Saules",1900,Quartier des Saules,actif,48.8453,2.3453,,
+166,urbanisme,immeuble_appartements,Résidence Clarté,"4 Rue des Oliviers, Quartier des Saules",1600,Quartier des Saules,actif,48.8454,2.3454,,
+167,urbanisme,maison,Maison Saules-1,"5 Rue des Oliviers, Quartier des Saules",160,Quartier des Saules,actif,48.8455,2.3455,,
+168,urbanisme,maison,Maison Saules-2,"6 Rue des Oliviers, Quartier des Saules",150,Quartier des Saules,actif,48.8456,2.3456,,
+169,urbanisme,maison,Maison Saules-3,"7 Rue des Oliviers, Quartier des Saules",170,Quartier des Saules,actif,48.8457,2.3457,,
+170,urbanisme,maison,Maison Saules-4,"8 Rue des Oliviers, Quartier des Saules",155,Quartier des Saules,actif,48.8458,2.3458,,
+171,urbanisme,maison,Maison Saules-5,"9 Rue des Oliviers, Quartier des Saules",165,Quartier des Saules,actif,48.8459,2.3459,,
+172,urbanisme,maison,Maison Saules-6,"10 Rue des Oliviers, Quartier des Saules",160,Quartier des Saules,actif,48.8460,2.3460,,
+173,urbanisme,maison,Maison Saules-7,"1 Avenue des Palmiers, Quartier des Saules",150,Quartier des Saules,actif,48.8461,2.3461,,
+174,urbanisme,maison,Maison Saules-8,"2 Avenue des Palmiers, Quartier des Saules",170,Quartier des Saules,actif,48.8462,2.3462,,
+175,urbanisme,maison,Maison Saules-9,"3 Avenue des Palmiers, Quartier des Saules",155,Quartier des Saules,actif,48.8463,2.3463,,
+176,urbanisme,maison,Maison Saules-10,"4 Avenue des Palmiers, Quartier des Saules",165,Quartier des Saules,actif,48.8464,2.3464,,
+177,urbanisme,maison,Maison Saules-11,"5 Avenue des Palmiers, Quartier des Saules",160,Quartier des Saules,actif,48.8465,2.3465,,
+178,urbanisme,maison,Maison Saules-12,"6 Avenue des Palmiers, Quartier des Saules",150,Quartier des Saules,actif,48.8466,2.3466,,
+179,urbanisme,maison,Maison Saules-13,"7 Avenue des Palmiers, Quartier des Saules",170,Quartier des Saules,actif,48.8467,2.3467,,
+180,urbanisme,maison,Maison Saules-14,"8 Avenue des Palmiers, Quartier des Saules",155,Quartier des Saules,actif,48.8468,2.3468,,
+181,urbanisme,maison,Maison Saules-15,"1 Boulevard des Figuiers, Quartier des Saules",165,Quartier des Saules,actif,48.8469,2.3469,,
+182,urbanisme,maison,Maison Saules-16,"2 Boulevard des Figuiers, Quartier des Saules",160,Quartier des Saules,actif,48.8470,2.3470,,
+183,urbanisme,maison,Maison Saules-17,"3 Boulevard des Figuiers, Quartier des Saules",150,Quartier des Saules,actif,48.8471,2.3471,,
+184,urbanisme,maison,Maison Saules-18,"4 Boulevard des Figuiers, Quartier des Saules",170,Quartier des Saules,actif,48.8472,2.3472,,
+185,urbanisme,maison,Maison Saules-19,"5 Boulevard des Figuiers, Quartier des Saules",155,Quartier des Saules,actif,48.8473,2.3473,,
+186,urbanisme,maison,Maison Saules-20,"6 Boulevard des Figuiers, Quartier des Saules",165,Quartier des Saules,actif,48.8474,2.3474,,
+187,urbanisme,maison,Maison Saules-21,"7 Boulevard des Figuiers, Quartier des Saules",160,Quartier des Saules,actif,48.8475,2.3475,,
+188,urbanisme,maison,Maison Saules-22,"8 Boulevard des Figuiers, Quartier des Saules",150,Quartier des Saules,actif,48.8476,2.3476,,
+189,urbanisme,maison,Maison Saules-23,"1 Place des Amandiers, Quartier des Saules",170,Quartier des Saules,actif,48.8477,2.3477,,
+190,urbanisme,maison,Maison Saules-24,"2 Place des Amandiers, Quartier des Saules",155,Quartier des Saules,actif,48.8478,2.3478,,
+191,urbanisme,maison,Maison Saules-25,"3 Place des Amandiers, Quartier des Saules",165,Quartier des Saules,actif,48.8479,2.3479,,
+192,urbanisme,maison,Maison Saules-26,"4 Place des Amandiers, Quartier des Saules",160,Quartier des Saules,actif,48.8480,2.3480,,
+193,urbanisme,maison,Maison Saules-27,"5 Place des Amandiers, Quartier des Saules",150,Quartier des Saules,actif,48.8481,2.3481,,
+194,urbanisme,maison,Maison Saules-28,"6 Place des Amandiers, Quartier des Saules",170,Quartier des Saules,actif,48.8482,2.3482,,
+195,urbanisme,immeuble_appartements,Résidence Aurora,"1 Rue des Frênes, Quartier des Peupliers",1700,Quartier des Peupliers,actif,48.8626,2.3501,,
+196,urbanisme,immeuble_appartements,Résidence Céleste,"2 Rue des Frênes, Quartier des Peupliers",1600,Quartier des Peupliers,actif,48.8627,2.3502,,
+197,urbanisme,immeuble_appartements,Résidence Zénith,"3 Rue des Frênes, Quartier des Peupliers",1800,Quartier des Peupliers,actif,48.8628,2.3503,,
+198,urbanisme,immeuble_appartements,Résidence Altitude,"4 Rue des Frênes, Quartier des Peupliers",1900,Quartier des Peupliers,actif,48.8629,2.3504,,
+199,urbanisme,maison,Maison Peupliers-1,"5 Rue des Frênes, Quartier des Peupliers",155,Quartier des Peupliers,actif,48.8630,2.3505,,
+200,urbanisme,maison,Maison Peupliers-2,"6 Rue des Frênes, Quartier des Peupliers",165,Quartier des Peupliers,actif,48.8631,2.3506,,
+201,urbanisme,maison,Maison Peupliers-3,"7 Rue des Frênes, Quartier des Peupliers",160,Quartier des Peupliers,actif,48.8632,2.3507,,
+202,urbanisme,maison,Maison Peupliers-4,"8 Rue des Frênes, Quartier des Peupliers",150,Quartier des Peupliers,actif,48.8633,2.3508,,
+203,urbanisme,maison,Maison Peupliers-5,"9 Rue des Frênes, Quartier des Peupliers",170,Quartier des Peupliers,actif,48.8634,2.3509,,
+204,urbanisme,maison,Maison Peupliers-6,"10 Rue des Frênes, Quartier des Peupliers",155,Quartier des Peupliers,actif,48.8635,2.3510,,
+205,urbanisme,maison,Maison Peupliers-7,"1 Avenue des Hêtres, Quartier des Peupliers",165,Quartier des Peupliers,actif,48.8636,2.3511,,
+206,urbanisme,maison,Maison Peupliers-8,"2 Avenue des Hêtres, Quartier des Peupliers",160,Quartier des Peupliers,actif,48.8637,2.3512,,
+207,urbanisme,maison,Maison Peupliers-9,"3 Avenue des Hêtres, Quartier des Peupliers",150,Quartier des Peupliers,actif,48.8638,2.3513,,
+208,urbanisme,maison,Maison Peupliers-10,"4 Avenue des Hêtres, Quartier des Peupliers",170,Quartier des Peupliers,actif,48.8639,2.3514,,
+209,urbanisme,maison,Maison Peupliers-11,"5 Avenue des Hêtres, Quartier des Peupliers",155,Quartier des Peupliers,actif,48.8640,2.3515,,
+210,urbanisme,maison,Maison Peupliers-12,"6 Avenue des Hêtres, Quartier des Peupliers",165,Quartier des Peupliers,actif,48.8641,2.3516,,
+211,urbanisme,maison,Maison Peupliers-13,"7 Avenue des Hêtres, Quartier des Peupliers",160,Quartier des Peupliers,actif,48.8642,2.3517,,
+212,urbanisme,maison,Maison Peupliers-14,"8 Avenue des Hêtres, Quartier des Peupliers",150,Quartier des Peupliers,actif,48.8643,2.3518,,
+213,urbanisme,maison,Maison Peupliers-15,"1 Boulevard des Aulnes, Quartier des Peupliers",170,Quartier des Peupliers,actif,48.8644,2.3519,,
+214,urbanisme,maison,Maison Peupliers-16,"2 Boulevard des Aulnes, Quartier des Peupliers",155,Quartier des Peupliers,actif,48.8645,2.3520,,
+215,urbanisme,maison,Maison Peupliers-17,"3 Boulevard des Aulnes, Quartier des Peupliers",165,Quartier des Peupliers,actif,48.8646,2.3521,,
+216,urbanisme,maison,Maison Peupliers-18,"4 Boulevard des Aulnes, Quartier des Peupliers",160,Quartier des Peupliers,actif,48.8647,2.3522,,
+217,urbanisme,maison,Maison Peupliers-19,"5 Boulevard des Aulnes, Quartier des Peupliers",150,Quartier des Peupliers,actif,48.8648,2.3523,,
+218,urbanisme,maison,Maison Peupliers-20,"6 Boulevard des Aulnes, Quartier des Peupliers",170,Quartier des Peupliers,actif,48.8649,2.3524,,
+219,urbanisme,maison,Maison Peupliers-21,"7 Boulevard des Aulnes, Quartier des Peupliers",155,Quartier des Peupliers,actif,48.8650,2.3525,,
+220,urbanisme,maison,Maison Peupliers-22,"8 Boulevard des Aulnes, Quartier des Peupliers",165,Quartier des Peupliers,actif,48.8651,2.3526,,
+221,urbanisme,maison,Maison Peupliers-23,"1 Place des Sorbiers, Quartier des Peupliers",160,Quartier des Peupliers,actif,48.8652,2.3527,,
+222,urbanisme,maison,Maison Peupliers-24,"2 Place des Sorbiers, Quartier des Peupliers",150,Quartier des Peupliers,actif,48.8653,2.3528,,
+223,urbanisme,maison,Maison Peupliers-25,"3 Place des Sorbiers, Quartier des Peupliers",170,Quartier des Peupliers,actif,48.8654,2.3529,,
+224,urbanisme,maison,Maison Peupliers-26,"4 Place des Sorbiers, Quartier des Peupliers",155,Quartier des Peupliers,actif,48.8655,2.3530,,
+225,urbanisme,maison,Maison Peupliers-27,"5 Place des Sorbiers, Quartier des Peupliers",165,Quartier des Peupliers,actif,48.8656,2.3531,,
+226,urbanisme,maison,Maison Peupliers-28,"6 Place des Sorbiers, Quartier des Peupliers",160,Quartier des Peupliers,actif,48.8657,2.3532,,
+227,urbanisme,maison,Maison Historique-1,"1 Rue des Remparts, Quartier Historique",145,Quartier Historique,actif,48.8536,2.3486,,
+228,urbanisme,maison,Maison Historique-2,"2 Rue des Remparts, Quartier Historique",150,Quartier Historique,actif,48.8537,2.3487,,
+229,urbanisme,maison,Maison Historique-3,"3 Rue des Remparts, Quartier Historique",140,Quartier Historique,actif,48.8538,2.3488,,
+230,urbanisme,maison,Maison Historique-4,"4 Rue des Remparts, Quartier Historique",155,Quartier Historique,actif,48.8539,2.3489,,
+231,urbanisme,maison,Maison Historique-5,"5 Rue des Remparts, Quartier Historique",145,Quartier Historique,actif,48.8540,2.3490,,
+232,urbanisme,maison,Maison Historique-6,"1 Place de l'Église, Quartier Historique",160,Quartier Historique,actif,48.8541,2.3491,,
+233,urbanisme,maison,Maison Historique-7,"2 Place de l'Église, Quartier Historique",140,Quartier Historique,actif,48.8542,2.3492,,
+234,urbanisme,maison,Maison Historique-8,"3 Place de l'Église, Quartier Historique",150,Quartier Historique,actif,48.8543,2.3493,,
+235,urbanisme,maison,Maison Historique-9,"4 Place de l'Église, Quartier Historique",145,Quartier Historique,actif,48.8544,2.3494,,
+236,urbanisme,maison,Maison Historique-10,"5 Place de l'Église, Quartier Historique",155,Quartier Historique,actif,48.8545,2.3495,,
+237,urbanisme,maison,Maison Historique-11,"1 Ruelle des Artisans, Quartier Historique",140,Quartier Historique,actif,48.8546,2.3496,,
+238,urbanisme,maison,Maison Historique-12,"2 Ruelle des Artisans, Quartier Historique",150,Quartier Historique,actif,48.8547,2.3497,,
+239,urbanisme,maison,Maison Historique-13,"3 Ruelle des Artisans, Quartier Historique",145,Quartier Historique,actif,48.8548,2.3498,,
+240,urbanisme,maison,Maison Historique-14,"4 Ruelle des Artisans, Quartier Historique",160,Quartier Historique,actif,48.8549,2.3499,,
+241,urbanisme,maison,Maison Historique-15,"5 Ruelle des Artisans, Quartier Historique",140,Quartier Historique,actif,48.8550,2.3500,,
+242,urbanisme,maison,Maison Historique-16,"1 Chemin des Fontaines, Quartier Historique",150,Quartier Historique,actif,48.8551,2.3501,,
+243,urbanisme,maison,Maison Historique-17,"2 Chemin des Fontaines, Quartier Historique",145,Quartier Historique,actif,48.8552,2.3502,,
+244,urbanisme,maison,Maison Historique-18,"3 Chemin des Fontaines, Quartier Historique",155,Quartier Historique,actif,48.8553,2.3503,,
+245,urbanisme,maison,Maison Historique-19,"4 Chemin des Fontaines, Quartier Historique",140,Quartier Historique,actif,48.8554,2.3504,,
+246,urbanisme,maison,Maison Historique-20,"5 Chemin des Fontaines, Quartier Historique",150,Quartier Historique,actif,48.8555,2.3505,,
+247,urbanisme,maison,Maison Historique-21,"1 Impasse du Vieux Puits, Quartier Historique",145,Quartier Historique,actif,48.8556,2.3506,,
+248,urbanisme,maison,Maison Historique-22,"2 Impasse du Vieux Puits, Quartier Historique",160,Quartier Historique,actif,48.8557,2.3507,,
+249,urbanisme,maison,Maison Historique-23,"3 Impasse du Vieux Puits, Quartier Historique",140,Quartier Historique,actif,48.8558,2.3508,,
+250,urbanisme,maison,Maison Historique-24,"4 Impasse du Vieux Puits, Quartier Historique",150,Quartier Historique,actif,48.8559,2.3509,,
+251,urbanisme,maison,Maison Historique-25,"5 Impasse du Vieux Puits, Quartier Historique",145,Quartier Historique,actif,48.8560,2.3510,,
+252,urbanisme,maison,Maison Historique-26,"1 Passage des Lavandières, Quartier Historique",155,Quartier Historique,actif,48.8561,2.3511,,
+253,urbanisme,maison,Maison Historique-27,"2 Passage des Lavandières, Quartier Historique",140,Quartier Historique,actif,48.8562,2.3512,,
+254,urbanisme,maison,Maison Historique-28,"3 Passage des Lavandières, Quartier Historique",150,Quartier Historique,actif,48.8563,2.3513,,
+255,urbanisme,maison,Maison Historique-29,"4 Passage des Lavandières, Quartier Historique",145,Quartier Historique,actif,48.8564,2.3514,,
+256,urbanisme,maison,Maison Historique-30,"5 Passage des Lavandières, Quartier Historique",160,Quartier Historique,actif,48.8565,2.3515,,
+257,urbanisme,maison,Maison Historique-31,"1 Rue du Vieux Château, Quartier Historique",140,Quartier Historique,actif,48.8566,2.3516,,
+258,urbanisme,maison,Maison Historique-32,"2 Rue du Vieux Château, Quartier Historique",150,Quartier Historique,actif,48.8567,2.3517,,
+259,urbanisme,maison,Maison Historique-33,"3 Rue du Vieux Château, Quartier Historique",145,Quartier Historique,actif,48.8568,2.3518,,
+260,urbanisme,maison,Maison Historique-34,"4 Rue du Vieux Château, Quartier Historique",155,Quartier Historique,actif,48.8569,2.3519,,
+261,urbanisme,maison,Maison Historique-35,"5 Rue du Vieux Château, Quartier Historique",140,Quartier Historique,actif,48.8570,2.3520,,
+262,urbanisme,maison,Maison Historique-36,"1 Place du Marché Ancien, Quartier Historique",150,Quartier Historique,actif,48.8571,2.3521,,
+263,urbanisme,maison,Maison Historique-37,"2 Place du Marché Ancien, Quartier Historique",145,Quartier Historique,actif,48.8572,2.3522,,
+264,urbanisme,maison,Maison Historique-38,"3 Place du Marché Ancien, Quartier Historique",160,Quartier Historique,actif,48.8573,2.3523,,
+265,urbanisme,maison,Maison Historique-39,"4 Place du Marché Ancien, Quartier Historique",140,Quartier Historique,actif,48.8574,2.3524,,
+266,urbanisme,maison,Maison Historique-40,"5 Place du Marché Ancien, Quartier Historique",150,Quartier Historique,actif,48.8575,2.3525,,
+267,parc,parc,Parc des Roses,"Boulevard Fleuri, E-City",45000,,ouvert,48.8580,2.3430,,
+268,parc,parc,Parc des Cèdres,"Avenue Verdoyante, E-City",60000,,ouvert,48.8490,2.3450,,
+269,parc,parc,Parc du Lac,"Rue de l'Étang, E-City",80000,,ouvert,48.8550,2.3550,,
+270,parc,parc,Parc des Oiseaux,"Chemin de la Forêt, E-City",35000,,ouvert,48.8620,2.3480,,
+271,parc,parc,Parc des Chênes,"Rue des Grands Arbres, E-City",50000,,ouvert,48.8510,2.3370,,
+272,parc,parc,Parc de la Cascade,"Avenue des Eaux, E-City",40000,,ouvert,48.8570,2.3520,,
+273,transport,ligne_tram,Ligne T1,"Gare Centrale - Zone Industrielle, E-City",,,,48.8560,2.3510,T1,tram
+274,transport,ligne_tram,Ligne T2,"Parc Central - Université, E-City",,,,48.8530,2.3480,T2,tram
+275,transport,ligne_tram,Ligne T3,"Quartier Historique - La Défense EC, E-City",,,,48.8535,2.3485,T3,tram
+276,transport,ligne_tram,Ligne T4,"Nord-Sud Express, E-City",,,,48.8600,2.3500,T4,tram
+277,transport,ligne_tram,Ligne T5,"Est-Ouest Express, E-City",,,,48.8550,2.3550,T5,tram
+278,transport,ligne_bus,Ligne B1,"Mairie - Zone Commerciale, E-City",,,,48.8555,2.3505,B1,bus
+279,transport,ligne_bus,Ligne B2,"Hôpital - Stade Municipal, E-City",,,,48.8490,2.3200,B2,bus
+280,transport,ligne_bus,Ligne B3,"Centre Historique - Les Hauts de E-City, E-City",,,,48.8540,2.3480,B3,bus
+281,transport,ligne_bus,Ligne B4,"Quartier des Lilas - Quartier des Ormes, E-City",,,,48.8550,2.3600,B4,bus
+282,transport,ligne_bus,Ligne B5,"Quartier des Saules - Quartier des Peupliers, E-City",,,,48.8450,2.3450,B5,bus
+283,transport,ligne_bus,Ligne B6,"La Défense EC - Arena EC, E-City",,,,48.8700,2.3300,B6,bus
+284,transport,ligne_bus,Ligne B7,"Gare Centrale - Parc Central, E-City",,,,48.8560,2.3510,B7,bus
+285,transport,ligne_bus,Ligne B8,"Circulaire Nord, E-City",,,,48.8600,2.3500,B8,bus
+286,transport,ligne_bus,Ligne B9,"Circulaire Sud, E-City",,,,48.8500,2.3500,B9,bus
+287,transport,ligne_bus,Ligne B10,"Université - Zone Industrielle, E-City",,,,48.8600,2.3550,B10,bus
+288,transport,ligne_bus,Ligne B11,"Parc des Roses - Parc du Lac, E-City",,,,48.8580,2.3430,B11,bus
+289,transport,ligne_bus,Ligne B12,"Quartier Historique - Jardin Botanique, E-City",,,,48.8540,2.3485,B12,bus
+290,transport,ligne_bus,Ligne B13,"Grand Plaza - Galerie Émeraude, E-City",,,,48.8480,2.3470,B13,bus
+291,transport,ligne_bus,Ligne B14,"Arena EC - Stade des Étoiles, E-City",,,,48.8620,2.3450,B14,bus
+292,transport,ligne_bus,Ligne B15,"Les Hauts de E-City - E-City West, E-City",,,,48.8500,2.3000,B15,bus
+293,transport,arret_tram,Stade Municipal,"Avenue des Sportifs, E-City",,Nord,ouvert,48.8602,2.3487,T1,tram
+294,transport,arret_tram,Zone Industrielle,"Rue des Usines, E-City",,Sud,ouvert,48.8450,2.3400,T1,tram
+295,transport,arret_tram,Parc Central,"Avenue des Platanes, E-City",,Centre,ouvert,48.8530,2.3480,T2,tram
+296,transport,arret_tram,Université,"Avenue des Étudiants, E-City",,Nord,ouvert,48.8600,2.3550,T2,tram
+297,transport,arret_tram,Quartier Historique,"Place de la Cathédrale, E-City",,Centre,ouvert,48.8535,2.3485,T3,tram
+298,transport,arret_tram,La Défense EC,"Esplanade Nord, E-City",,Nord,ouvert,48.8700,2.3300,T3,tram
+299,transport,arret_tram,Gare du Nord,"Place des Voyageurs, E-City",,Nord,ouvert,48.8620,2.3520,T4,tram
+300,transport,arret_tram,Gare du Sud,"Avenue des Départs, E-City",,Sud,ouvert,48.8480,2.3500,T4,tram
+301,transport,arret_tram,Porte de l'Est,"Boulevard Oriental, E-City",,Est,ouvert,48.8550,2.3620,T5,tram
+302,transport,arret_tram,Porte de l'Ouest,"Avenue Occidentale, E-City",,Ouest,ouvert,48.8550,2.3380,T5,tram
+303,transport,arret_tram,Beaux-Arts,"Avenue Culturelle, E-City",,Sud,ouvert,48.8500,2.3450,T2,tram
+304,transport,arret_tram,Centre Commercial,"Rue des Magasins, E-City",,Ouest,ouvert,48.8520,2.3350,T5,tram
+305,transport,arret_tram,Zone Résidentielle,"Allée des Résidences, E-City",,Est,ouvert,48.8570,2.3580,T3,tram
+306,transport,arret_tram,Parc des Roses,"Boulevard Fleuri, E-City",,Centre,ouvert,48.8580,2.3430,T1,tram
+307,transport,arret_tram,Jardin Botanique,"Route des Serres, E-City",,Sud,ouvert,48.8470,2.3380,T4,tram
+308,transport,arret_bus,Zone Commerciale,"Rue des Commerçants, E-City",,Ouest,ouvert,48.8520,2.3350,B1,bus
+309,transport,arret_bus,Stade Municipal,"Avenue des Sportifs, E-City",,Nord,ouvert,48.8602,2.3487,B2,bus
+310,transport,arret_bus,Centre Historique,"Place du Vieux Marché, E-City",,Centre,ouvert,48.8540,2.3480,B3,bus
+311,transport,arret_bus,Les Hauts de E-City,"Route Panoramique, E-City",,Ouest,ouvert,48.8500,2.3000,B3,bus
+312,transport,arret_bus,Quartier des Lilas,"Rue des Fleurs, E-City",,Est,ouvert,48.8550,2.3600,B4,bus
+313,transport,arret_bus,Quartier des Ormes,"Avenue des Arbres, E-City",,Ouest,ouvert,48.8490,2.3300,B4,bus
+314,transport,arret_bus,Quartier des Saules,"Chemin des Bois, E-City",,Sud,ouvert,48.8450,2.3450,B5,bus
+315,transport,arret_bus,Quartier des Peupliers,"Allée des Grands Arbres, E-City",,Nord,ouvert,48.8625,2.3500,B5,bus
+316,transport,arret_bus,La Défense EC,"Esplanade Nord, E-City",,Nord,ouvert,48.8700,2.3300,B6,bus
+317,transport,arret_bus,Arena EC,"Esplanade des Spectacles, E-City",,Nord,ouvert,48.8620,2.3450,B6,bus
+318,transport,arret_bus,Gare Centrale,"Place de la Gare, E-City",,Centre,ouvert,48.8560,2.3510,B7,bus
+319,transport,arret_bus,Parc Central,"Avenue des Platanes, E-City",,Centre,ouvert,48.8530,2.3480,B7,bus
+320,transport,arret_bus,Université,"Avenue des Étudiants, E-City",,Nord,ouvert,48.8600,2.3550,B10,bus
+321,transport,arret_bus,Zone Industrielle,"Rue des Usines, E-City",,Sud,ouvert,48.8450,2.3400,B10,bus
+322,transport,arret_bus,Parc des Roses,"Boulevard Fleuri, E-City",,Centre,ouvert,48.8580,2.3430,B11,bus
+323,transport,arret_bus,Parc du Lac,"Rue de l'Étang, E-City",,Centre,ouvert,48.8550,2.3550,B11,bus
+324,transport,arret_bus,Quartier Historique,"Place de la Cathédrale, E-City",,Centre,ouvert,48.8535,2.3485,B12,bus
+325,transport,arret_bus,Jardin Botanique,"Route des Serres, E-City",,Sud,ouvert,48.8470,2.3380,B12,bus
+326,transport,arret_bus,Grand Plaza,"Boulevard des Achats, E-City",,Sud,ouvert,48.8480,2.3470,B13,bus
+327,transport,arret_bus,Galerie Émeraude,"Rue des Boutiques, E-City",,Est,ouvert,48.8570,2.3620,B13,bus
+328,transport,arret_bus,Arena EC,"Esplanade des Spectacles, E-City",,Nord,ouvert,48.8620,2.3450,B14,bus
+329,transport,arret_bus,Stade des Étoiles,"Boulevard des Sportifs, E-City",,Nord,ouvert,48.8581,2.3544,B14,bus
+330,transport,arret_bus,Les Hauts de E-City,"Route Panoramique, E-City",,Ouest,ouvert,48.8500,2.3000,B15,bus
+331,transport,arret_bus,E-City West,"Rue des Commerces, E-City",,Ouest,ouvert,48.8600,2.3400,B15,bus
+332,transport,arret_bus,Porte Nord,"Boulevard Septentrional, E-City",,Nord,ouvert,48.8630,2.3520,B8,bus
+333,transport,arret_bus,Porte Sud,"Avenue Méridionale, E-City",,Sud,ouvert,48.8480,2.3500,B9,bus
+334,transport,arret_bus,Porte Est,"Rue Orientale, E-City",,Est,ouvert,48.8550,2.3620,B4,bus
+335,transport,arret_bus,Porte Ouest,"Boulevard Occidental, E-City",,Ouest,ouvert,48.8550,2.3380,B4,bus
+336,transport,arret_bus,Centre Culturel,"Place des Arts, E-City",,Centre,ouvert,48.8540,2.3500,B7,bus
+337,transport,arret_bus,Piscine Municipale,"Avenue des Nageurs, E-City",,Nord,ouvert,48.8590,2.3530,B2,bus
+338,transport,arret_bus,Bibliothèque Centrale,"Rue des Livres, E-City",,Centre,ouvert,48.8550,2.3490,B12,bus
+339,transport,arret_bus,Marché Couvert,"Place des Producteurs, E-City",,Centre,ouvert,48.8545,2.3510,B3,bus
+340,transport,arret_bus,Cinéma Paradis,"Boulevard du 7ème Art, E-City",,Sud,ouvert,48.8490,2.3470,B9,bus
+341,transport,arret_bus,Théâtre Municipal,"Place de la Comédie, E-City",,Centre,ouvert,48.8555,2.3515,B7,bus
+342,transport,arret_bus,Conservatoire,"Rue de la Musique, E-City",,Nord,ouvert,48.8590,2.3540,B10,bus
+343,transport,arret_bus,Centre Médical,"Avenue de la Santé, E-City",,Ouest,ouvert,48.8510,2.3350,B2,bus
+344,transport,arret_bus,Crèche Les P'tits Loups,"Rue des Enfants, E-City",,Est,ouvert,48.8560,2.3610,B4,bus
+345,transport,arret_bus,École Maternelle,"Rue des Écoliers, E-City",,Sud,ouvert,48.8470,2.3460,B5,bus
+346,transport,arret_bus,Collège Descartes,"Avenue des Études, E-City",,Nord,ouvert,48.8610,2.3530,B10,bus
+347,transport,arret_bus,Lycée Voltaire,"Boulevard des Savoirs, E-City",,Centre,ouvert,48.8560,2.3520,B7,bus
+348,transport,arret_bus,Centre Administratif,"Place des Services, E-City",,Centre,ouvert,48.8550,2.3505,B3,bus
+349,transport,arret_bus,Commissariat,"Rue de la Loi, E-City",,Ouest,ouvert,48.8520,2.3400,B2,bus
+350,transport,arret_bus,Caserne des Pompiers,"Avenue des Secours, E-City",,Est,ouvert,48.8570,2.3600,B4,bus
+351,transport,arret_bus,Déchetterie Municipale,"Chemin des Recyclages, E-City",,Sud,ouvert,48.8460,2.3420,B5,bus
+352,transport,arret_bus,Station d'Épuration,"Route de l'Eau Pure, E-City",,Nord,ouvert,48.8640,2.3530,B8,bus
+353,transport,arret_bus,Centrale Électrique,"Boulevard de l'Énergie, E-City",,Ouest,ouvert,48.8530,2.3350,B2,bus
+354,transport,arret_bus,Usine de Traitement,"Rue des Industries, E-City",,Sud,ouvert,48.8440,2.3400,B10,bus
+355,transport,arret_bus,Zone Logistique,"Avenue des Entrepôts, E-City",,Est,ouvert,48.8580,2.3630,B4,bus
+356,transport,arret_bus,Parc des Expositions,"Esplanade des Salons, E-City",,Nord,ouvert,48.8650,2.3550,B8,bus
+357,transport,arret_bus,Aéroport Régional,"Route des Avions, E-City",,Sud,ouvert,48.8400,2.3450,B9,bus
+358,transport,arret_bus,Gare Routière,"Place des Bus, E-City",,Centre,ouvert,48.8550,2.3515,B7,bus
+359,transport,arret_bus,Terminal Taxis,"Place des Taxis, E-City",,Centre,ouvert,48.8555,2.3520,B7,bus
+360,transport,arret_bus,Parc Relais,"Chemin des Voitures, E-City",,Ouest,ouvert,48.8530,2.3380,B2,bus
+361,transport,arret_bus,Vélostation Centrale,"Place des Vélos, E-City",,Centre,ouvert,48.8550,2.3525,B7,bus
+362,transport,arret_bus,École de Musique,"Rue des Notes, E-City",,Nord,ouvert,48.8600,2.3540,B10,bus
+363,transport,arret_bus,Centre Aquatique,"Avenue des Nageurs, E-City",,Est,ouvert,48.8570,2.3610,B4,bus
+364,transport,arret_bus,Base de Loisirs,"Chemin des Activités, E-City",,Sud,ouvert,48.8460,2.3480,B5,bus
+365,transport,arret_bus,Club de Tennis,"Allée des Raquettes, E-City",,Ouest,ouvert,48.8510,2.3380,B2,bus
+366,transport,arret_bus,Golf Municipal,"Route des Fairways, E-City",,Nord,ouvert,48.8630,2.3550,B8,bus
+367,transport,arret_bus,Piscine Olympique,"Boulevard des Champions, E-City",,Centre,ouvert,48.8540,2.3520,B7,bus
+368,transport,arret_bus,Stade Nautique,"Avenue des Bassins, E-City",,Est,ouvert,48.8580,2.3620,B4,bus
+369,transport,arret_bus,Patinoire Municipale,"Rue des Glaces, E-City",,Ouest,ouvert,48.8520,2.3370,B2,bus
+370,transport,arret_bus,Bowling City,"Allée des Quilles, E-City",,Sud,ouvert,48.8470,2.3470,B5,bus
+371,transport,arret_bus,Laser Game Arena,"Chemin des Lasers, E-City",,Nord,ouvert,48.8610,2.3560,B8,bus
+372,transport,arret_bus,Escape Game,"Rue des Énigmes, E-City",,Centre,ouvert,48.8560,2.3530,B7,bus
+373,transport,arret_bus,Cinéma IMAX,"Boulevard des Écrans, E-City",,Est,ouvert,48.8575,2.3615,B4,bus
+374,transport,arret_bus,Planétarium,"Avenue des Étoiles, E-City",,Ouest,ouvert,48.8525,2.3390,B2,bus
+375,transport,arret_bus,Musée des Sciences,"Place des Découvertes, E-City",,Sud,ouvert,48.8480,2.3490,B5,bus
+376,transport,arret_bus,Galeries d'Art,"Rue des Peintres, E-City",,Nord,ouvert,48.8620,2.3570,B8,bus
+377,transport,arret_bus,Centre des Congrès,"Esplanade des Réunions, E-City",,Centre,ouvert,48.8570,2.3530,B7,bus
+378,transport,arret_bus,Palais des Festivals,"Boulevard des Célébrations, E-City",,Est,ouvert,48.8580,2.3630,B4,bus
+379,transport,arret_bus,Office du Tourisme,"Place des Visiteurs, E-City",,Centre,ouvert,48.8555,2.3510,B7,bus
+380,transport,arret_bus,Hôtel de Ville,"Place de la Mairie, E-City",,Centre,ouvert,48.8550,2.3500,B3,bus
+381,transport,arret_bus,Centre des Impôts,"Rue des Contributions, E-City",,Ouest,ouvert,48.8530,2.3400,B2,bus
+382,transport,arret_bus,CPAM,"Avenue de la Sécurité Sociale, E-City",,Est,ouvert,48.8560,2.3600,B4,bus
+383,transport,arret_bus,CAF,"Boulevard des Allocations, E-City",,Sud,ouvert,48.8470,2.3500,B5,bus
+384,transport,arret_bus,Pôle Emploi,"Rue des Recherches, E-City",,Nord,ouvert,48.8610,2.3550,B10,bus
+385,transport,arret_bus,Chambre de Commerce,"Place des Affaires, E-City",,Centre,ouvert,48.8565,2.3525,B7,bus
+386,transport,arret_bus,Banque de France,"Avenue de l'Économie, E-City",,Ouest,ouvert,48.8535,2.3410,B2,bus
+387,transport,arret_bus,Poste Centrale,"Place des Courriers, E-City",,Centre,ouvert,48.8555,2.3505,B7,bus
+388,transport,arret_bus,Gendarmerie,"Rue de l'Ordre, E-City",,Est,ouvert,48.8575,2.3610,B4,bus
+389,transport,arret_bus,Tribunal,"Place de la Justice, E-City",,Sud,ouvert,48.8485,2.3510,B5,bus
+390,transport,arret_bus,Préfecture,"Avenue de l'Administration, E-City",,Nord,ouvert,48.8605,2.3545,B10,bus
+391,transport,arret_bus,Maison d'Arrêt,"Chemin de la Détention, E-City",,Ouest,ouvert,48.8515,2.3350,B2,bus
+392,transport,arret_bus,Cimetière Municipal,"Route du Souvenir, E-City",,Est,ouvert,48.8590,2.3640,B4,bus
+393,transport,arret_bus,Crématorium,"Chemin des Adieux, E-City",,Sud,ouvert,48.8465,2.3510,B5,bus
+394,transport,arret_bus,Église Saint-Pierre,"Place de l'Église, E-City",,Centre,ouvert,48.8540,2.3490,B3,bus
+395,transport,arret_bus,Temple Protestant,"Rue de la Réforme, E-City",,Nord,ouvert,48.8615,2.3565,B10,bus
+396,transport,arret_bus,Mosquée,"Avenue de la Paix, E-City",,Est,ouvert,48.8585,2.3625,B4,bus
+397,transport,arret_bus,Synagogue,"Rue de la Torah, E-City",,Ouest,ouvert,48.8525,2.3395,B2,bus
+398,transport,arret_bus,Monastère,"Chemin de la Méditation, E-City",,Sud,ouvert,48.8455,2.3495,B5,bus
+399,transport,arret_bus,Chapelle,"Ruelle des Prières, E-City",,Centre,ouvert,48.8545,2.3515,B3,bus
+400,transport,arret_bus,Cathédrale,"Place du Cloître, E-City",,Centre,ouvert,48.8535,2.3485,B3,bus

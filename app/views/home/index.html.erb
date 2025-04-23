@@ -147,14 +147,7 @@
           <%= link_to "Voir tous les objets →", objet_connectes_path, class: "btn-all" %>
         </section>
 
-        <section class="global-container global-container-column">
-            <h2 class="title gold-title" id="transports">
-                Le Réseaux de Transport de E-City 
-                <img src="" class="meet-point-JO" alt="" loading="lazy" itemprop="image">
-            </h2>
-            <a class="button gold-round-button" href="#" itemprop="url">Voir les horaires par arrêt &#x2794; </a> 
-
-        </section>
+        <%= render 'transport_section' %>
 
         <section class="actualites-section">
             <h2 class="gold-title" id="histoire">

@@ -1,0 +1,40 @@
+<section id="transports" class="global-container global-container-column">
+  <h2 class="gold-title">Réseau de Transport E-City</h2>
+  
+  <div class="transport-highlights">
+    <% stats = {
+      trams: Location.where(location_type: 'arret_tram').count,
+      buses: Location.where(location_type: 'arret_bus').count,
+      lines: Location.where.not(transport_line: nil).distinct.count(:transport_line)
+    } %>
+    
+    <div class="stats-grid">
+      <% stats.each do |key, value| %>
+        <div class="stat-item">
+          <div class="stat-value"><%= value %></div>
+          <div class="stat-label">
+            <% if key == :trams %>
+              Arrêts de tram
+            <% elsif key == :buses %>
+              Arrêts de bus
+            <% elsif key == :lines %>
+              Lignes actives
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="transport-map-preview">
+      <div class="map-placeholder">
+        <i class="fas fa-map-marked-alt"></i>
+        <p>Carte du réseau en cours de mise à jour</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="transport-actions">
+    <%= link_to "Explorer le réseau", transports_path, class: "button gold-round-button" %>
+    <%= link_to "Voir les horaires", horaires_path, class: "button default-round-button" %>
+  </div>
+</section>

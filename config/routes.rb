@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  resources :transports, only: [:index, :show, :edit, :update], controller: 'transports'
+  get 'horaires', to: 'transports#schedules', as: :horaires
+  
   get "objet_connectes/index"
   
   namespace :admin do

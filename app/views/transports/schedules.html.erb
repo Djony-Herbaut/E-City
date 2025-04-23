@@ -1,0 +1,30 @@
+<div class="global-container">
+  <h1 class="gold-title">Horaires des Transports E-City</h1>
+  
+  <div class="notice">
+    <p class="default-text">Les horaires complets seront disponibles prochainement.</p>
+    <p>Voici la liste des lignes de transport :</p>
+  </div>
+
+  <div class="lines-container">
+    <% @lines.each do |line, type| %>
+      <div class="line-card">
+        <h3 class="line-title">Ligne <%= line %> (<%= type.humanize %>)</h3>
+        
+        <div class="line-stops">
+          <% stops = Location.where(transport_line: line).order(:name) %>
+          <% stops.each do |stop| %>
+            <div class="stop-item">
+              <span class="stop-name"><%= stop.name %></span>
+              <% if @access_level >= 1 %>
+                <span class="stop-neighborhood"><%= stop.neighborhood %></span>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "Retour au réseau", transports_path, class: "button gold-round-button" %>
+</div>

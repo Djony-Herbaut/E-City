@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: MyString
+  type: 
+  name: MyString
+  address: MyString
+  area: 1
+  neighborhood: MyString
+  status: MyString
+  latitude: 1.5
+  longitude: 1.5
+  transport_line: MyString
+  transport_type: MyString
+
+two:
+  category: MyString
+  type: 
+  name: MyString
+  address: MyString
+  area: 1
+  neighborhood: MyString
+  status: MyString
+  latitude: 1.5
+  longitude: 1.5
+  transport_line: MyString
+  transport_type: MyString

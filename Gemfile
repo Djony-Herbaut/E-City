@@ -18,7 +18,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 # Gemme pour ajouter les sessions utilisateurs
 gem 'devise'
-
+# Gemme pour gérer les images
+gem 'image_processing', '~> 1.2'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"

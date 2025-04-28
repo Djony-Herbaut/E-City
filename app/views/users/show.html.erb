@@ -110,7 +110,7 @@
           <div class="objet-info">
             <h3><%= objet.titre %></h3>
             <p><%= truncate(objet.description, length: 100) %></p>
-            <p class="status">Statut : <strong><%= status_to_text(objet.status) %></strong></p>
+            <p class="status <%= status_class(objet.status) %>">Statut : <strong><%= status_to_text(objet.status) %></strong></p>
           </div>
         </div>
       <% end %>
@@ -138,5 +138,57 @@
 </body>
 
 <style>
-  
+  .status {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.status-pending {
+  color: #f39c12 !important;
+}
+
+.status-approved {
+  color: #27ae60 !important;
+}
+
+.status-rejected {
+  color: #e74c3c !important;
+}
+
+.objets-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.objet-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.objet-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.objet-info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.status {
+  margin-top: 8px;
+  color: #555;
+}
+
 </style>

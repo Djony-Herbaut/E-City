@@ -97,6 +97,36 @@
     <% end %>
   </section>
 
+<section class="mes-objets-section">
+  <h2 class="gold-title">Mes Objets Connectés</h2>
+
+  <% if @objets_utilisateur.any? %>
+    <div class="objets-cards-container">
+      <% @objets_utilisateur.each do |objet| %>
+        <div class="objet-card">
+          <% if objet.image.attached? %>
+            <%= image_tag objet.image.variant(resize_to_limit: [300, 200]), alt: objet.titre, class: "objet-image" %>
+          <% end %>
+          <div class="objet-info">
+            <h3><%= objet.titre %></h3>
+            <p><%= truncate(objet.description, length: 100) %></p>
+            <p class="status">Statut : <strong><%= status_to_text(objet.status) %></strong></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="global-container global-container-column">
+      <p class="title">Tu n'as encore proposé aucun objet connecté.</p>
+      <%= link_to "Proposer un Objet Connecté", new_objet_connecte_path, class: "button gold-round-button" %>
+    </div>
+  <% end %>
+
+  <div class="global-container global-container-column">
+    <%= link_to "Proposer un Nouvel Objet Connecté", new_objet_connecte_path, class: "button gold-round-button" %>
+  </div>
+</section>
+
   <% if current_user.admin? %>
   <section class="admin-dashboard-section">
     <%= render 'shared/admin_dashboard' %>
@@ -106,3 +136,7 @@
 </main>
     
 </body>
+
+<style>
+  
+</style>

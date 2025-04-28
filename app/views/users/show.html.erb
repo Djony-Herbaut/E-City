@@ -96,6 +96,13 @@
       </div>
     <% end %>
   </section>
+
+  <% if current_user.admin? %>
+  <section class="admin-dashboard-section">
+    <%= render 'shared/admin_dashboard' %>
+  </section>
+  <% end %>
+
 </main>
     
 </body>

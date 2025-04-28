@@ -40,5 +40,8 @@ Rails.application.routes.draw do
   resources :actualites
 
   resources :objet_connectes
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 
 end

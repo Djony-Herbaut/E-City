@@ -223,4 +223,72 @@
       grid-template-columns: 1fr;
     }
   }
+
+  /* Transport Page */
+.transport-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.transport-filters {
+  background-color: var(--bgcolor-theme);
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  margin: 2rem 0;
+  border: 2px solid var(--text-color2);
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group.compact {
+  flex: 1;
+  min-width: 200px;
+}
+
+.form-group.compact .form-input {
+  padding: 0.8rem;
+  font-size: 1.4rem;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.button.compact {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.4rem;
+}
+
+.transport-grid-container {
+  margin-top: 2rem;
+}
+
+/* Transport Cards - Version spécifique transports */
+.transport-card .card-header.transport {
+  background: #2196F3; /* Bleu pour les transports */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filter-row {
+    flex-direction: column;
+  }
+  
+  .form-group.compact {
+    min-width: 100%;
+  }
+  
+  .filter-actions {
+    justify-content: center;
+  }
+}
+
   }

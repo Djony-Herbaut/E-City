@@ -10,7 +10,7 @@
         <%= image_tag objet.image.variant(resize_to_limit: [300, 200]) %>
       <% end %>
 
-      <%= form_with url: admin_objet_connecte_path(objet), method: :patch do %>
+      <%= form_with url: admin_objet_connecte_path(objet), method: :patch, local: true, data: { turbo: false } do %>
         <%= submit_tag "Valider", name: "commit" %>
         <%= submit_tag "Rejeter", name: "commit" %>
       <% end %>

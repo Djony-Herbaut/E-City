@@ -39,7 +39,7 @@ Rails.application.routes.draw do
   namespace :admin do
     
     root to: "dashboard#index" # Panel admin home
-    resources :objet_connectes, only: [:index, :update]
+    resources :objet_connectes, only: [:index, :new, :create, :show, :destroy]
   end
 
   resources :actualites

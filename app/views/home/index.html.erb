@@ -114,34 +114,18 @@
         <section class="actualites-section">
           <h2 class="title">Objets Connectés</h2>
 
-          <div class="carousel">
-            <% @objets_connectes.last(5).each_with_index do |objet, index| %>
-              <input type="radio" name="carousel-objets" id="objet-slide-<%= index %>" <%= 'checked' if index == 0 %>>
+          <div class="objets-grid">
+            <% @objets_connectes.last(5).each do |objet| %>
+              <div class="objet-card">
+                <% if objet.image.attached? %>
+                  <%= image_tag objet.image, alt: objet.titre, class: "objet-image" %>
+                <% else %>
+                  <img src="https://via.placeholder.com/300x200?text=Pas+d'image" alt="Pas d'image" class="objet-image">
+                <% end %>
+                <h3 class="objet-titre"><%= objet.titre %></h3>
+                <%= link_to "Voir l'objet", objet_connecte_path(objet), class: "btn-all" %>
+              </div>
             <% end %>
-
-            <div class="slides">
-              <% @objets_connectes.last(5).each_with_index do |objet, index| %>
-                <div class="slide">
-                  <div class="image">
-                    <% if objet.image.attached? %>
-                      <%= image_tag objet.image, alt: objet.titre %>
-                    <% else %>
-                      <img src="https://via.placeholder.com/850x350?text=Pas+d'image" alt="Pas d'image">
-                    <% end %>
-                  </div>
-                  <div class="infos">
-                    <h3><%= objet.titre %></h3>
-                    <p><%= truncate(objet.description, length: 150) %></p>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-
-            <div class="nav">
-              <% @objets_connectes.last(5).each_with_index do |_, index| %>
-                <label for="objet-slide-<%= index %>"></label>
-              <% end %>
-            </div>
           </div>
 
           <%= link_to "Voir tous les objets →", objet_connectes_path, class: "btn-all" %>
@@ -192,3 +176,41 @@
     </footer>
     <%= yield %>
 </body>
+
+<style>
+.objets-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.objet-card {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.2s;
+}
+
+.objet-card:hover {
+  transform: translateY(-5px);
+}
+
+.objet-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.objet-titre {
+  margin: 15px 0 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+</style>

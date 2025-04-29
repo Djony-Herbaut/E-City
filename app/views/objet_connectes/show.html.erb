@@ -48,80 +48,52 @@
         </nav>
     </header>
 
-<div>
-<h1 class="title">Les objets connectés</h1>
+    <main class="actualite-show-container">
 
-<p>  Chaque citoyen peut soumettre une idée pour développer un objet connecté. </p>
-<p>  Chaque proposition sera soumise à une validation par nos administrateurs. </p>
-<p>  Si elle est validée vous pourrez aller dans n'importe quelle galerie marchande pour le récupérer ! </p>
-</div>
+    <article class="actualite-detail">
+        <% if @objet_connecte.image.attached? %>
+        <%= image_tag @objet_connecte.image, class: "actualite-detail-image", alt: @objet_connecte.titre %>
+        <% else %>
+        <div class="actualite-image-placeholder">
+            <span>Image non disponible</span>
+        </div>
+        <% end %>
 
-<h1 class="title">Liste des Objets Connectés</h1>
+        <div class="actualite-detail-content">
+        <h1 class="actualite-detail-title"><%= @objet_connecte.titre %></h1>
+        
+        <div class="actualite-meta">
+            <% if @objet_connecte.user %>
+            <span class="actualite-author">
+                <i class="fas fa-user"></i> <%= @objet_connecte.user.prenom %>
+            </span>
+            <% end %>
+        </div>
 
-<div>
-    <% if user_signed_in? %>
-        <%= link_to 'Ajouter un objet', new_objet_connecte_path, class: 'btn-ajouter' %>
-    <% end %>
-</div>
+        <div class="actualite-detail-text">
+            <%= simple_format(@objet_connecte.description) %>
+        </div>
+        </div>
+    </article>
 
-<div class="objets-container">
-  <% @objets.each do |objet| %>
-    <div class="objet-card">
-      <h2><%= objet.titre %></h2>
-      <% if objet.image.attached? %>
-        <%= image_tag objet.image.variant(resize_to_limit: [300, 200]), class: "objet-image" %>
-      <% end %>
-      <p><%= objet.description %></p>
-      <p>Status : <%= status_to_text(objet.status) %></p>
-      <%= link_to "Voir l'objet", objet_connecte_path(objet), class: "btn-all" %>
+    <div class="actualite-actions">
+        <% if user_signed_in? && current_user.admin? %>
+        <%= button_to @objet_connecte,
+            method: :delete,
+            class: "button btn-danger",
+            form: { data: { turbo_confirm: "Êtes-vous sûr de vouloir supprimer cet objet ?" } } do %>
+            <i class="fas fa-trash-alt"></i> Supprimer
+        <% end %>
+        <% end %>
+
+        <%= link_to objet_connectes_path, class: "button default-round-button" do %>
+        <i class="fas fa-arrow-left"></i> Retour à la liste
+        <% end %>
     </div>
-  <% end %>
-</div>
+    </main>
 
-<footer class="actualites-footer">
+    <footer class="actualites-footer">
     <p>© <%= Time.current.year %> E-City - Tous droits réservés</p>
-</footer>
+    </footer>
 
 </body>
-</html>
-<style>
-  .btn-ajouter {
-    display: inline-block;
-    margin-bottom: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background-color 0.2s ease-in-out;
-  }
-
-  .btn-ajouter:hover {
-    background-color: #45a049;
-  }
-
-   .objets-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
-  }
-
-  .objet-card {
-    border: 1px solid #ccc;
-    padding: 1rem;
-    border-radius: 12px;
-    background-color: #f9f9f9;
-    text-align: center;
-  }
-
-  .objet-image {
-    max-width: 100%;
-    height: auto;
-    max-height: 200px;
-    object-fit: contain;
-    margin-bottom: 0.5rem;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  }
-</style>

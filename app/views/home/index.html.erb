@@ -148,7 +148,9 @@
         </section>
 
         <%= render 'transport_section' %>
-
+          <% if current_user&.admin? %>
+            <%= link_to "Panel Admin", admin_root_path %>
+          <% end %>
         <section class="actualites-section">
             <h2 class="gold-title" id="histoire">
                 Notre Histoire

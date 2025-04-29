@@ -35,6 +35,8 @@
 
   <div class="transport-actions">
     <%= link_to "Explorer le réseau", transports_path, class: "button gold-round-button" %>
+    <% if user_signed_in? %>
     <%= link_to "Voir les horaires", horaires_path, class: "button default-round-button" %>
+    <% end %>
   </div>
 </section>

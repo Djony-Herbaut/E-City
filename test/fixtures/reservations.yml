@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  location: one
+  start_time: 2025-04-29 20:53:49
+  end_time: 2025-04-29 20:53:49
+  status: 1
+  notes: MyText
+
+two:
+  user: two
+  location: two
+  start_time: 2025-04-29 20:53:49
+  end_time: 2025-04-29 20:53:49
+  status: 1
+  notes: MyText

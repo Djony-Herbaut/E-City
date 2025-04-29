@@ -1,0 +1,40 @@
+<!-- app/views/admin/reservations/index.html.erb -->
+<div class="admin-reservations">
+  <h1>Gestion des réservations</h1>
+
+  <div class="reservation-tabs">
+    <%= link_to "En attente", admin_reservations_path(status: 'pending'), class: "tab #{'active' if params[:status] == 'pending'}" %>
+    <%= link_to "Approuvées", admin_reservations_path(status: 'approved'), class: "tab #{'active' if params[:status] == 'approved'}" %>
+    <%= link_to "Rejetées", admin_reservations_path(status: 'rejected'), class: "tab #{'active' if params[:status] == 'rejected'}" %>
+  </div>
+
+  <% @reservations.each do |reservation| %>
+    <div class="reservation-card">
+      <div class="reservation-header">
+        <h3><%= reservation.location.name %></h3>
+        <span class="status <%= reservation.status_text.downcase %>"><%= reservation.status_text %></span>
+      </div>
+      
+      <div class="reservation-body">
+        <p><strong>Utilisateur :</strong> <%= reservation.user.full_name %></p>
+        <p><strong>Date :</strong> <%= reservation.start_time.to_date %></p>
+        <p><strong>Créneau :</strong> <%= reservation.time_slot %></p>
+        
+        <!-- Intégrez ici le code admin pour chaque réservation -->
+        <% if reservation.pending? %>
+          <div class="reservation-actions">
+            <%= button_to "Approuver", 
+                          admin_reservation_path(reservation, status: 'approved'),
+                          method: :patch,
+                          class: "button success" %>
+                          
+            <%= button_to "Rejeter", 
+                          admin_reservation_path(reservation, status: 'rejected'),
+                          method: :patch,
+                          class: "button danger" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

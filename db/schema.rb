@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_29_024518) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_29_185349) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -96,6 +96,19 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_29_024518) do
     t.index ["user_id"], name: "index_objet_connectes_on_user_id"
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "location_id", null: false
+    t.datetime "start_time", null: false
+    t.datetime "end_time", null: false
+    t.integer "status", default: 0
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_reservations_on_location_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -126,4 +139,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_29_024518) do
   add_foreign_key "incidents", "locations"
   add_foreign_key "incidents", "users"
   add_foreign_key "objet_connectes", "users"
+  add_foreign_key "reservations", "locations"
+  add_foreign_key "reservations", "users"
 end

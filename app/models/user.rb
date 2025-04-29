@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :actualites
   has_many :objet_connectes
   has_many :incidents, dependent: :destroy
+  has_many :reservations
 
   # Callback pour mettre à jour le grade et le statut admin avant la sauvegarde
   before_save :update_grade_and_admin_status

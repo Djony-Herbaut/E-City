@@ -1,0 +1,21 @@
+<% reservations.each do |reservation| %>
+    <div class="admin-reservation-card">
+      <div class="reservation-info">
+        <h3><%= reservation.location.name %></h3>
+        <p>Par: <%= reservation.user.full_name %></p>
+        <p><%= reservation.start_time.to_date.to_fs(:long) %></p>
+        <p><%= reservation.time_slot %></p>
+      </div>
+  
+      <% if status == 'pending' %>
+        <div class="reservation-actions">
+          <%= button_to "Approuver", admin_reservation_path(reservation, status: 'approved'), 
+                        method: :patch, class: "button success" %>
+          <%= button_to "Rejeter", admin_reservation_path(reservation, status: 'rejected'), 
+                        method: :patch, class: "button danger" %>
+        </div>
+      <% else %>
+        <span class="status <%= status %>"><%= status.humanize %></span>
+      <% end %>
+    </div>
+  <% end %>

@@ -7,6 +7,16 @@ Rails.application.routes.draw do
       post :report_incident
     end
   end
+
+  resources :locations do
+    resources :reservations, only: [:new, :create]
+  end
+  
+  resources :reservations, only: [:index]
+  
+  namespace :admin do
+    resources :reservations, only: [:index, :update]
+  end
   
   get "objet_connectes/index"
   

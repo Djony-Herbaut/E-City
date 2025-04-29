@@ -145,6 +145,31 @@
     <%= render 'shared/admin_dashboard' %>
   </section>
   <% end %>
+  
+  <section class="actualites-section">
+  <h2 class="title">Lieux réservables</h2>
+  
+  <div class="locations-grid">
+    <% Location.where.not(category: 'transport').limit(9).each do |location| %>
+      <div class="transport-card">
+        <div class="card-header">
+          <h3><%= location.name %></h3>
+          <span class="badge"><%= location.location_type.humanize %></span>
+        </div>
+        
+        <div class="card-body">
+          <p class="address"><%= location.address %></p>
+          
+          <% if current_user&.grade&.nom == 'Complexe' || current_user&.admin? %>
+            <%= link_to "Réserver", new_location_reservation_path(location), 
+                       class: "button gold-round-button" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
+
 
 </main>
     

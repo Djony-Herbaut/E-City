@@ -26,5 +26,6 @@ module ECity
     config.assets.enabled = true
     config.assets.paths << Rails.root.join("app", "assets", "stylesheets")
     config.time_zone = 'Paris'
+    config.active_record.default_timezone = :local
   end
 end

@@ -1,0 +1,20 @@
+<div class="reservations-container">
+  <h1 class="title">Mes Réservations</h1>
+
+  <div class="reservations-grid">
+    <% @reservations.each do |reservation| %>
+      <div class="reservation-card">
+        <h3><%= reservation.location.name %></h3>
+        <p><%= reservation.start_time.to_formatted_s(:long) %></p>
+        <p><%= reservation.time_slot %></p>
+        
+        <!-- Ligne corrigée -->
+        <p class="status status-<%= reservation.status %>">
+          <%= reservation.status_text %>
+        </p>
+        
+        <%= link_to "Voir détails", reservation_path(reservation), class: "btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>

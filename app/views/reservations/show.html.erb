@@ -1,0 +1,30 @@
+<div class="reservation-details">
+  <h1>Réservation </h1>
+  
+  <div class="reservation-info">
+    <p><strong>Lieu :</strong> <%= @reservation.location.name %></p>
+    <p><strong>Date :</strong> <%= @reservation.start_time.to_date %></p>
+    <p><strong>Creneau :</strong> <%= @reservation.time_slot %></p>
+    <p><strong>Statut :</strong> <span class="status <%= @reservation.status_text.downcase %>"><%= @reservation.status_text %></span></p>
+    <% if @reservation.notes.present? %>
+      <p><strong>Notes :</strong> <%= @reservation.notes %></p>
+    <% end %>
+  </div>
+
+
+  <% if current_user.admin? %>
+    <div class="admin-actions">
+      <%= button_to "Approuver", 
+                    admin_reservation_path(@reservation, status: 'approved'),
+                    method: :patch,
+                    class: "button success" if @reservation.pending? %>
+                    
+      <%= button_to "Rejeter", 
+                    admin_reservation_path(@reservation, status: 'rejected'),
+                    method: :patch,
+                    class: "button danger" if @reservation.pending? %>
+    </div>
+  <% end %>
+
+  <%= link_to "Retour", reservations_path, class: "button default-round-button" %>
+</div>

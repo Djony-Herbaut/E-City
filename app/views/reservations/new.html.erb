@@ -1,0 +1,35 @@
+<div class="form-container">
+  <h1 class="form-title">Nouvelle réservation pour <%= @location.name %></h1>
+
+  <%= form_with(model: [@location, @reservation], local: true) do |form| %>
+    <% if @reservation.errors.any? %>
+      <div class="error-messages">
+        <h2><%= pluralize(@reservation.errors.count, "erreur") %> ont empêché cette réservation d'être enregistrée :</h2>
+        <ul>
+          <% @reservation.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :start_time, "Créneau horaire (1h)", class: "form-label" %>
+      <%= form.select :start_time, 
+                     options_for_select(@available_slots),
+                     { include_blank: "Sélectionnez un créneau" },
+                     class: "form-input",
+                     required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :notes, "Notes supplémentaires", class: "form-label" %>
+      <%= form.text_area :notes, class: "form-input" %>
+    </div>
+
+    <div class="form-actions">
+      <%= form.submit "Envoyer la réservation", class: "button gold-round-button" %>
+      <%= link_to "Annuler", locations_path, class: "button default-round-button" %>
+    </div>
+  <% end %>
+</div>

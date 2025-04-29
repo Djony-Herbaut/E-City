@@ -35,7 +35,7 @@
           <h4><%= link_to 'Toutes les Actualités', actualites_path, class: 'link-menu-nav' %></h4>
           <h4><%= link_to 'Accueil', '/', class: 'link-menu-nav' %></h4>
           <h4><%= link_to "Lire l'Histoire complète →", notre_histoire_path, class: 'link-menu-nav' %></h4>
-          <h4>Les Transports</h4>
+          <h4><%= link_to 'Les Transports', transports_path, class: 'link-menu-nav' %></h4>
       
           <% if user_signed_in? %>
             <%= form_for :destroy_user_session, url: destroy_user_session_path, method: :delete, html: { data: { confirm: "Tu es sûr de vouloir te déconnecter ?" } } do |f| %>

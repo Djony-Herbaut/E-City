@@ -1,3 +1,24 @@
+<header>
+        <nav class="navbar">
+          <h2 class="nav-title">E-city</h2>
+          <h4><%= link_to 'Toutes les Actualités', actualites_path, class: 'link-menu-nav active' %></h4>
+          <h4><%= link_to 'Accueil', '/', class: 'link-menu-nav' %></h4>
+          <h4><%= link_to "Lire l'Histoire complète →", notre_histoire_path, class: 'link-menu-nav' %></h4>
+          <h4><%= link_to 'Les Transports', transports_path, class: 'link-menu-nav' %></h4>
+      
+          <% if user_signed_in? %>
+            <%= form_for :destroy_user_session, url: destroy_user_session_path, method: :delete, html: { data: { confirm: "Tu es sûr de vouloir te déconnecter ?" } } do |f| %>
+            <%= f.submit "Se déconnecter", class: "btn btn-warning" %>
+          <% end %>
+          <% else %>
+            <ul itemprop="genre" class="menu-navbar">
+              <li class="list-menu-nav"><%= link_to 'Devenir Citoyen', new_user_registration_path, class: 'link-menu-nav' %></li>
+              <li class="list-menu-nav"><%= link_to "Connexion à l'espace membre", new_user_session_path, class: 'link-menu-nav' %></li>
+            </ul>
+          <% end %>
+        </nav>
+    </header>
+
 
 <%= render 'form', objet_connecte: @objet_connecte %>
 

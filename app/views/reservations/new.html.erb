@@ -1,3 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Plateforme connectée E-City">
+
+    <%= yield :head %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="./css/theme-principale.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag "actualites", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    
+    <script src="https://kit.fontawesome.com/2454e153f7.js" crossorigin="anonymous"></script>
+
+    <title><%= content_for(:title) || "E-City | Actualités" %></title>
+</head>
+<body itemscope itemtype="https://schema.org/website">
+    <header>
+        <nav class="navbar">
+          <h2 class="nav-title">E-city</h2>
+          <h4><%= link_to 'Toutes les Actualités', actualites_path, class: 'link-menu-nav active' %></h4>
+          <h4><%= link_to 'Accueil', '/', class: 'link-menu-nav' %></h4>
+          <h4><%= link_to "Lire l'Histoire complète →", notre_histoire_path, class: 'link-menu-nav' %></h4>
+          <h4><%= link_to 'Les Transports', transports_path, class: 'link-menu-nav' %></h4>
+      
+          <% if user_signed_in? %>
+            <%= form_for :destroy_user_session, url: destroy_user_session_path, method: :delete, html: { data: { confirm: "Tu es sûr de vouloir te déconnecter ?" } } do |f| %>
+            <%= f.submit "Se déconnecter", class: "btn btn-warning" %>
+          <% end %>
+          <% else %>
+            <ul itemprop="genre" class="menu-navbar">
+              <li class="list-menu-nav"><%= link_to 'Devenir Citoyen', new_user_registration_path, class: 'link-menu-nav' %></li>
+              <li class="list-menu-nav"><%= link_to "Connexion à l'espace membre", new_user_session_path, class: 'link-menu-nav' %></li>
+            </ul>
+          <% end %>
+        </nav>
+    </header>
+
 <div class="form-container">
   <h1 class="form-title">Nouvelle réservation pour <%= @location.name %></h1>
 
@@ -22,6 +72,8 @@
                      required: true %>
     </div>
 
+    <%= form.hidden_field :end_time %>
+
     <div class="form-group">
       <%= form.label :notes, "Notes supplémentaires", class: "form-label" %>
       <%= form.text_area :notes, class: "form-input" %>
@@ -33,3 +85,20 @@
     </div>
   <% end %>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const startTimeSelect = document.getElementById('reservation_start_time');
+  const endTimeField = document.getElementById('reservation_end_time');
+  
+  if (startTimeSelect && endTimeField) {
+    startTimeSelect.addEventListener('change', function() {
+      if (this.value) {
+        const startTime = new Date(this.value);
+        const endTime = new Date(startTime.getTime() + 60 * 60 * 1000); // +1 heure
+        endTimeField.value = endTime.toISOString().slice(0, 19).replace('T', ' ');
+      }
+    });
+  }
+});
+</script>

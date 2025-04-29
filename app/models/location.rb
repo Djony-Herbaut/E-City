@@ -1,2 +1,3 @@
 class Location < ApplicationRecord
-end
+    has_many :reservations, dependent: :destroy
+  end

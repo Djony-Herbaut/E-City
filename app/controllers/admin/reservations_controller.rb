@@ -1,4 +1,3 @@
-# app/controllers/admin/reservations_controller.rb
 class Admin::ReservationsController < ApplicationController
   before_action :authenticate_user!
   before_action :check_admin!

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_29_185349) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_29_221212) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -99,8 +99,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_29_185349) do
   create_table "reservations", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "location_id", null: false
-    t.datetime "start_time", null: false
-    t.datetime "end_time", null: false
+    t.text "start_time"
+    t.text "end_time"
     t.integer "status", default: 0
     t.text "notes"
     t.datetime "created_at", null: false

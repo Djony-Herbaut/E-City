@@ -9,10 +9,16 @@ Rails.application.routes.draw do
   end
 
   resources :locations do
-    resources :reservations, only: [:new, :create]
+    resources :reservations, except: [:index] do
+      collection do
+        get :horaires  
+      end
+      member do
+        post :report_incident  
+      end
+    end
   end
-  
-  resources :reservations, only: [:index]
+  resources :reservations, only: [:index] 
   
   namespace :admin do
     resources :reservations, only: [:index, :update]

@@ -52,7 +52,25 @@
 
 <main>
   <section class="actualites-section">
-    <h1 class="gold-title">Profil de <%= @user.prenom %></h1>
+    <h1 class="gold-title">Profil de <%= @user.nom %>,<%= @user.prenom %></h1>
+      <div class="profil-infos-container">
+        <h2 class="profil-grade"><%= @user.grade.nom %></h2>
+        <p class="profil-points"><%= @user.points %> points</p>
+
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: <%= @progress_percent %>%;"></div>
+          <% if @next_grade %>
+            <span class="progress-grade-next"><%= @next_grade.nom %></span>
+          <% else %>
+            <span class="progress-grade-next">Grade max atteint</span>
+          <% end %>
+        </div>
+
+        <div class="profil-actions">
+          <%= link_to "Modifier mon mot de passe", edit_user_registration_path, class: "button gold-round-button" %>
+        </div>
+      </div>
+
 
     <% if @actualites_utilisateur.any? %>
       <div class="carousel">
@@ -115,18 +133,13 @@
         </div>
       <% end %>
     </div>
+          <%= link_to 'Ajouter un nouvel objet connecté', new_objet_connecte_path, class: 'gold-round-button' %>
   <% else %>
     <div class="global-container global-container-column">
       <p class="title">Tu n'as encore proposé aucun objet connecté.</p>
       <%= link_to "Proposer un Objet Connecté", new_objet_connecte_path, class: "button gold-round-button" %>
     </div>
   <% end %>
-
-  <div class="global-container global-container-column">
-    <%= link_to "Proposer un Nouvel Objet Connecté", new_objet_connecte_path, class: "button gold-round-button" %>
-  </div>
-</section>
-
   <% if current_user.admin? %>
   <section class="admin-dashboard-section">
     <%= render 'shared/admin_dashboard' %>

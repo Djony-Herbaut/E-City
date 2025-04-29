@@ -1,30 +1,61 @@
 <div class="global-container">
   <h1 class="gold-title">Horaires des Transports E-City</h1>
-  
-  <div class="notice">
-    <p class="default-text">Les horaires complets seront disponibles prochainement.</p>
-    <p>Voici la liste des lignes de transport :</p>
-  </div>
 
-  <div class="lines-container">
-    <% @lines.each do |line, type| %>
-      <div class="line-card">
-        <h3 class="line-title">Ligne <%= line %> (<%= type.humanize %>)</h3>
-        
-        <div class="line-stops">
-          <% stops = Location.where(transport_line: line).order(:name) %>
-          <% stops.each do |stop| %>
-            <div class="stop-item">
-              <span class="stop-name"><%= stop.name %></span>
-              <% if @access_level >= 1 %>
-                <span class="stop-neighborhood"><%= stop.neighborhood %></span>
-              <% end %>
-            </div>
-          <% end %>
+  <div class="transport-filters <%= 'complex-user' if current_user.grade&.nom == 'Complexe' %>">
+    <%= form_with url: horaires_path, method: :get, local: true, class: "filter-form" do |f| %>
+      <div class="filter-row">
+        <!-- Filtre par ligne de transport -->
+        <div class="form-group">
+          <%= f.label :line, "Choisir une ligne", class: "form-label" %>
+          <%= f.select :line, options_for_select(@lines.map { |line, type| [line, line] }, params[:line]), {}, class: "form-input" %>
         </div>
+
+        <div class="form-group">
+          <%= f.label :transport_type, "Type de transport", class: "form-label" %>
+          <%= f.select :transport_type, options_for_select([["Bus", "bus"], ["Tram", "tram"]]), {}, class: "form-input" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :stop, "Choisir un arrêt", class: "form-label" %>
+          <% stops_for_select = @stops.present? ? @stops : [] %>
+          <%= f.select :stop, options_for_select(stops_for_select.map { |stop| [stop, stop] }), {}, class: "form-input" %>
+        </div>
+
+      </div>
+
+      <div class="filter-actions">
+        <%= f.submit "Filtrer", class: "button gold-round-button" %>
+        <%= link_to "Réinitialiser", horaires_path, class: "button default-round-button" %>
       </div>
     <% end %>
-  </div>
+    <div class="lines-container">
+      <% @lines.each do |line, type| %>
+        <div class="line-card">
+          <h3 class="line-title">Ligne <%= line %> (<%= type.humanize %>)</h3>
 
+          <div class="line-stops">
+            <% stops = Location.where(transport_line: line).order(:name) %>
+            <% stops.each do |stop| %>
+              <div class="stop-item">
+                <span class="stop-name"><%= stop.name %></span>
+                <% if @access_level >= 1 %>
+                  <span class="stop-neighborhood"><%= stop.neighborhood %></span>
+                <% end %>
+
+                <!-- Formulaire pour signaler un incident -->
+                <%= form_with url: report_incident_transport_path(id: stop.id), method: :post, local: true do %>
+                  <div class="incident-form">
+                    <%= select_tag :incident_type, options_for_select(["Problème technique", "Retard", "Autre"]), class: "form-input" %>
+                    <%= submit_tag "Signaler un incident", class: "button gold-round-button" %>
+                  </div>
+                <% end %>
+
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
   <%= link_to "Retour au réseau", transports_path, class: "button gold-round-button" %>
 </div>

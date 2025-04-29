@@ -25,5 +25,6 @@ module ECity
     # config.eager_load_paths << Rails.root.join("extras")
     config.assets.enabled = true
     config.assets.paths << Rails.root.join("app", "assets", "stylesheets")
+    config.time_zone = 'Paris'
   end
 end

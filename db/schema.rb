@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_23_191012) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_29_024518) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -56,6 +56,17 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_23_191012) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "incidents", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "location_id", null: false
+    t.string "incident_type"
+    t.integer "points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_incidents_on_location_id"
+    t.index ["user_id"], name: "index_incidents_on_user_id"
+  end
+
   create_table "locations", force: :cascade do |t|
     t.string "category"
     t.string "location_type"
@@ -70,6 +81,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_23_191012) do
     t.string "transport_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "schedule"
+    t.datetime "incident_reported_at"
   end
 
   create_table "objet_connectes", force: :cascade do |t|
@@ -110,5 +123,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_23_191012) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "actualites", "users"
+  add_foreign_key "incidents", "locations"
+  add_foreign_key "incidents", "users"
   add_foreign_key "objet_connectes", "users"
 end

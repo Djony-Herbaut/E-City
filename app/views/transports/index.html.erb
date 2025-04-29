@@ -103,17 +103,22 @@
               <% end %>
 
               <div class="meta">
-                <span class="status <%= location.status %>">
-                  <%= location.status.humanize %>
+                <span class="status <%= location.status || 'unknown' %>">
+                  <%= location.status&.humanize || "Statut inconnu" %>
                 </span>
 
                 <% if location.neighborhood.present? %>
                   <span class="neighborhood"><%= location.neighborhood.humanize %></span>
                 <% end %>
+
+                <!-- Affichage du retard -->
+                <% delay = formatted_delay(location) %>
+                <p class="delay-status"><%= delay %></p>
               </div>
             </div>
           </div>
         <% end %>
+
       </div>
 
       <div class="pagination">

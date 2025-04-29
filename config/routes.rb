@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
   resources :transports, only: [:index, :show, :edit, :update], controller: 'transports'
   get 'horaires', to: 'transports#schedules', as: :horaires
+  resources :transports, only: [:index, :show, :edit, :update], controller: 'transports' do
+    member do
+      post :report_incident
+    end
+  end
   
   get "objet_connectes/index"
   
